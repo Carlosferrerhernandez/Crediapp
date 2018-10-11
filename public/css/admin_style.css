@@ -1,0 +1,22 @@
+/* body {
+	color: #EEF4F5;
+} */
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.btn-primary {
+    color: white;
+    background-color: #1EDC74;
+    border-color: #1EDC74;
+}
+
+.btn-link {
+    font-weight: 400;
+    color: #3490dc;
+    background-color: transparent;
+}
