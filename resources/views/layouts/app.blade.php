@@ -41,15 +41,15 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('inicio') }}">{{ __('Inicio') }}</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('inicio') }}">{{ __('inicio') }}</a>
+                        </li>
                             {{-- <li class="nav-item">
                                 @if (Route::has('register'))
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
                             </li> --}}
-                        @else
+                            @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -57,25 +57,37 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Cerrar sesion') }}
-                                    </a>
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Cerrar sesion') }}
+                                </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
                         @endguest
                     </ul>
                 </div>
             </div>
         </nav>
 
+        <script src="{{ asset('js/jquery-3.1.1.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/sweetalert2.js') }}" type="text/javascript"></script>
+
+        @include('sweetalert::alert')
+
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="copyright pull-right" style="margin-bottom: 2px; margin-top: 2px; padding-top:0px; padding-bottom:0px;">
+                        &copy; <script>document.write(new Date().getFullYear())</script>, desarrollado por: <br> <a href="http://graphitech.com.co" target="black">Graphitech</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

@@ -18,3 +18,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*
+*	Susbcripcion route
+*/
+
+Route::get('/subscription', 'SubscriptionController@index')->name('subscription.index');
+
+Route::post('/subscription', 'SubscriptionController@store')->name('subscription.store');
+
+/*
+*	Contacto route
+*/
+
+Route::get('/contact', 'ContactController@index')->name('contact.index');
+
+Route::post('/contact', 'ContactController@store')->name('contact.store');
+
+
