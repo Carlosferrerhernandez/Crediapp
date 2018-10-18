@@ -84,8 +84,8 @@
     </div>
     <footer class="footer">
         <div class="container-fluid">
-            <div class="copyright pull-right" style="margin-bottom: 2px; margin-top: 2px; padding-top:0px; padding-bottom:0px;">
-                        &copy; <script>document.write(new Date().getFullYear())</script>, desarrollado por: <br> <a href="http://graphitech.com.co" target="black">Graphitech</a>
+            <div class="copyright pull-right" style="margin-bottom: 2px; margin-top: 2px; padding-top:0px; padding-bottom:0px; color: black">
+                    &copy; <script>document.write(new Date().getFullYear())</script>,desarrollado por: <a href="http://graphitech.com.co" target="black">Graphitech</a>
             </div>
         </div>
     </footer>
