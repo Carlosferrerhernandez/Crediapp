@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInformacionBancaTable extends Migration
+class CreatePorcentajesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateInformacionBancaTable extends Migration
      */
     public function up()
     {
-        Schema::create('informacion_banca', function (Blueprint $table) {
+        Schema::create('porcentajes', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->char('bancos');
-            $table->enum('t_cuenta', ['Corriente', 'Ahorros', 'Nomina']);
+            $table->integer('gestion_credito');
+            $table->integer('seguro_bancario');
+            $table->integer('interes');
 
             /*
             * Relacion con tabla usuarios
@@ -36,6 +37,6 @@ class CreateInformacionBancaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('informacion_banca');
+        Schema::dropIfExists('porcentajes');
     }
 }
