@@ -27,7 +27,7 @@ class SubscriptionController extends Controller
     {
         return Validator::make($data, [
 
-            'suscMail'=> 'required|string|max:255'
+            'suscMail'=> 'email|required|string|max:255'
         ]);
     }
 
@@ -38,7 +38,7 @@ class SubscriptionController extends Controller
      */
     public function index(Request $request)
     {   
-		return view('guest.subscription');
+		return view('suscripciones.index');
 
     }
 

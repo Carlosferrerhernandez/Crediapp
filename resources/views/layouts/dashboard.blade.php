@@ -51,7 +51,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{ route('subscription.index')}}">
               <i class="nc-icon nc-email-85"></i>
               <p>Suscripciones</p>
             </a>
