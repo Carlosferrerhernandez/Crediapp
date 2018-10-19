@@ -56,12 +56,12 @@ a:hover {
 
 /* HERO */
 .container-fluid.hero {
-	height: 725px;
+	height: 695px;
 	width: 100%;
 	background-image: url(../../img/hero.jpg);
 	background-position: bottom left;
 	background-repeat: no-repeat;
-	padding-top: 110px;
+	padding-top: 80px;
 }
 
 .container-fluid.hero p {
@@ -349,7 +349,7 @@ input[type='range']::-webkit-slider-thumb {
 
 /* TESTIMONIOS */
 #testimonios {
-	padding: 55px 0;
+	padding: 90px 0 30px;
 	background-color: #EEF4F5;
 }
 
@@ -446,7 +446,7 @@ input[type='range']::-webkit-slider-thumb {
 
 /* FAQ */
 #pqr {
-	padding-top: 60px;
+	padding-top: 100px;
 	background-color: #EEF4F5;
 	background-image: url(../../img/pqr-bg.png);
 	background-repeat: no-repeat;
@@ -970,7 +970,7 @@ footer .foot-copy {
 @media (max-width: 1199px) {
 	/* HERO */
 	.container-fluid.hero {
-		height: 680px;
+		height: 650px;
 		background-size: auto 530px;
 	}
 }
@@ -1025,6 +1025,7 @@ footer .foot-copy {
 		height: 400px;
 		background-size: auto 330px;
 		margin-bottom: 500px;
+		padding-top: 90px;
 	}
 	.container-fluid.hero p {
 		font-size: 18px;
@@ -1044,6 +1045,10 @@ footer .foot-copy {
 		right: 0;
 		margin-left: auto;
 		margin-right: auto;
+	}
+	input[type='range']::-webkit-slider-thumb {
+		height: 25px;
+		width: 25px;
 	}
 	/* REQUISITOS */
 	#requisitos {

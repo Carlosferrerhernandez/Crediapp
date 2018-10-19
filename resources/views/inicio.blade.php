@@ -167,11 +167,11 @@
                 <table class="tabla-beneficios">
                     <tr>
                         <td><img src="{{ asset('img/check.png') }}"></td>
-                        <td>Calcula tu crédito, tú eliges el monto y el día en el que pagarás.</td>
+                        <td>Calcula tu crédito, tú eliges el monto y la fecha de pago.</td>
                     </tr>
                     <tr>
                         <td><img src="{{ asset('img/check.png') }}"></td>
-                        <td>¡Sencillo rápido, sin filas y sin trámites.</td>
+                        <td>¡Fácil, rápido, sin filas y sin trámites.</td>
                     </tr>
                     <tr>
                         <td><img src="{{ asset('img/check.png') }}"></td>
@@ -183,19 +183,19 @@
                     </tr>
                     <tr>
                         <td><img src="{{ asset('img/check.png') }}"></td>
-                        <td>Si eres puntual accedes a mayores beneficios.</td>
+                        <td>Si eres puntual puedes acceder a mayores beneficios.</td>
                     </tr>
                     <tr>
                         <td><img src="{{ asset('img/check.png') }}"></td>
-                        <td>Confidencialidad absoluta de la información.</td>
+                        <td>Confidencialidad absoluta, tu información está segura con nosotros.</td>
                     </tr>
                     <tr>
                         <td><img src="{{ asset('img/check.png') }}"></td>
-                        <td>No necesitas historia crediticia.</td>
+                        <td>No necesitas tener historia crediticia.</td>
                     </tr>
                     <tr>
                         <td><img src="{{ asset('img/check.png') }}"></td>
-                        <td>Somos transparentes. Te mostramos todos los costos de tu crédito.</td>
+                        <td>Somos transparentes. Puedes ver todos los costos de tu crédito.</td>
                     </tr>
                 </table>
             </div>
@@ -283,7 +283,7 @@
                         <table>
                             <tr>
                                 <td><img src="{{ asset('img/test-3.png') }}"></td>
-                                <td><p>Mayra Muskus<br>
+                                <td><p>Miriam Gómez<br>
                                     <span>Barranquilla</span></p>
                                 </td>
                             </tr>
