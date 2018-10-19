@@ -15,13 +15,13 @@ Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
 
-Route::get('/test', function () {
-    return view('home');
-})->name('test');
+Route::get('/search', 'GestionCreditoController@search');
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 /*
 *	Susbcripcion route
