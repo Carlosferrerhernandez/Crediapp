@@ -29,6 +29,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="{{asset('js/funciones.js')}}"></script>
 </head>
 <body>
     <!-- Menú -->
@@ -66,6 +67,9 @@
                     <h3>Calcula tu crédito</h3>
                     <div class="wrapper">
                         <form class="calculator">
+                            <div id="valores">
+                                
+                            </div>
                             <table>
                                 <tr>
                                     <td>¿Cuánto dinero necesitas?</td>

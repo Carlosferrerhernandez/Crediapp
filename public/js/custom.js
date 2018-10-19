@@ -1,22 +1,29 @@
-$(document).ready( function () {
+gestion();
 
+$(document).ready( function () {
 
     // VARIABLES
     // ----------------------------------------------------------
 
+    var calculatorInteres =$('#id_Interes').val();
+    var calculatorGestion =$('#id_Gestion').val();
+    var calculatorSeguro = $('#id_Seguro').val();
+
     var interes, gestion, seguro, dias, valor, result;
+
     var calculator = $('.calculator');
     var calculatorDias = calculator.find('.calculator__dias');
     var calculatorDinero = calculator.find('.calculator__dinero');
-    var calculatorInteres = 2;
-    var calculatorGestion = 8;
-    var calculatorSeguro = 3;
+
+
     var calculatorResult = calculator.find('.calculator__result');
     var dineroAmount = calculator.find('.dinero-amount');
     var diasAmount = calculator.find('.dias-amount');
     var interesAmount = calculator.find('.interes-amount');
     var gestionAmount = calculator.find('.gestion-amount');
     var seguroAmount = calculator.find('.seguro-amount');
+
+    console.log(calculatorInteres,calculatorGestion,calculatorSeguro);
 
     function commaSeparateNumber(val){
         while (/(\d+)(\d{3})/.test(val.toString())){
@@ -92,6 +99,10 @@ $(document).ready( function () {
         calculatorResult.text( '$' + commaSeparateNumber(result.toFixed(0)) );
     });
 
+   /* $(window).on('load', function () {
+        gestion();
+    });*/
+
 });
 
 
@@ -99,11 +110,11 @@ $('input[type="range"]').change(function () {
 	var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
 	
 	$(this).css('background-image',
-				'-webkit-gradient(linear, left top, right top, '
-				+ 'color-stop(' + val + ', #1EDC74), '
-				+ 'color-stop(' + val + ', #9A9A9A)'
-				+ ')'
-				);
+        '-webkit-gradient(linear, left top, right top, '
+        + 'color-stop(' + val + ', #1EDC74), '
+        + 'color-stop(' + val + ', #9A9A9A)'
+        + ')'
+        );
 });
 
 $('.owl-carousel').owlCarousel({
@@ -154,8 +165,8 @@ $(".radioSelect").click(function(){
 
 function showSpecificFields(obj){
     if($(obj).is(":checked")){
-    var radioVal = $(obj).val();
-     $(".fieldsSpecific").each(function(){
+        var radioVal = $(obj).val();
+        $(".fieldsSpecific").each(function(){
          if($(this).attr('id') == radioVal){
              $(this).show();
          } else{
@@ -176,8 +187,8 @@ $(".radioSelect2").click(function(){
 
 function showSpecificFields2(obj){
     if($(obj).is(":checked")){
-    var radioVal = $(obj).val();
-     $(".fieldsSpecific2").each(function(){
+        var radioVal = $(obj).val();
+        $(".fieldsSpecific2").each(function(){
          if($(this).attr('id') == radioVal){
              $(this).show();
          } else{
@@ -210,3 +221,5 @@ $(document).ready(function() {
 		e.preventDefault(); $(this).parent('div').remove(); x--;
 	})
 });
+
+
