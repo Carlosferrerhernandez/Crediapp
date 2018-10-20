@@ -56,7 +56,11 @@ class GestionCreditoController extends Controller
             if (count($data) != 0) {
                 foreach ($data as $porcentaje) {
 
-                    $resultados[]= ['interes'=>$porcentaje->interes, 'gestion_credito'=>$porcentaje->gestion_credito, 'seguro_bancario'=>$porcentaje->seguro_bancario];
+                    $resultados[]= [
+                        'interes'=>$porcentaje->interes, 
+                        'gestion_credito'=>$porcentaje->gestion_credito, 
+                        'seguro_bancario'=>$porcentaje->seguro_bancario
+                    ];
                 }
             }
 

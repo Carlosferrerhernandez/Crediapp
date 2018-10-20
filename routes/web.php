@@ -15,20 +15,19 @@ Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
 
+/*
+*	Controladro buscar porcentaje-credito
+*/
 Route::get('/search', 'GestionCreditoController@search');
 
 Auth::routes();
 
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 /*
 *	Susbcripcion route
 */
-
 Route::get('/subscription', 'SubscriptionController@index')->name('subscription.index');
-
 Route::post('/subscription', 'SubscriptionController@store')->name('subscription.store');
 
 

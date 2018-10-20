@@ -1,13 +1,13 @@
-gestion();
-
 $(document).ready( function () {
+    
+gestion();
 
     // VARIABLES
     // ----------------------------------------------------------
 
-    var calculatorInteres =$('#id_Interes').val();
-    var calculatorGestion =$('#id_Gestion').val();
-    var calculatorSeguro = $('#id_Seguro').val();
+    /*var calculatorInteres = $('#id_Interes').val();
+    var calculatorGestion = $('#id_Gestion').val();
+    var calculatorSeguro = $('#id_Seguro').val();*/
 
     var interes, gestion, seguro, dias, valor, result;
 
@@ -23,7 +23,27 @@ $(document).ready( function () {
     var gestionAmount = calculator.find('.gestion-amount');
     var seguroAmount = calculator.find('.seguro-amount');
 
-    console.log(calculatorInteres,calculatorGestion,calculatorSeguro);
+    /*console.log(calculatorInteres,calculatorGestion,calculatorSeguro);*/
+
+    function gestion(){
+        $.ajax({
+            headers:{
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            },
+            url:'/search',
+            method:'GET',
+            success: function(respuesta){
+                console.log(respuesta);
+                $('#valores').html(
+                    `<input type="hidden" id="id_Interes" value="${respuesta[0]['interes']}">
+                    <input type="hidden" id="id_Gestion" value="${respuesta[0]['gestion_credito']}">
+                    <input type="hidden" id="id_Seguro" value="${respuesta[0]['seguro_bancario']}">
+                `);
+            }
+        });
+
+        
+    }
 
     function commaSeparateNumber(val){
         while (/(\d+)(\d{3})/.test(val.toString())){
@@ -37,6 +57,11 @@ $(document).ready( function () {
     // ----------------------------------------------------------
 
     $(window).on('DOMContentLoaded', function () {
+
+        var calculatorInteres = $('#id_Interes').val();
+        var calculatorGestion = $('#id_Gestion').val();
+        var calculatorSeguro = $('#id_Seguro').val();
+
         dineroAmount.text( '$' + commaSeparateNumber(calculatorDinero.val()) );
         diasAmount.text( calculatorDias.val() );
         dias = calculatorDias.val() * 1;
@@ -63,6 +88,10 @@ $(document).ready( function () {
             dias = calculatorDias.val() * 1;
         }
 
+        var calculatorInteres = $('#id_Interes').val();
+        var calculatorGestion = $('#id_Gestion').val();
+        var calculatorSeguro = $('#id_Seguro').val();
+
         dineroAmount.text( '$' + commaSeparateNumber(calculatorDinero.val()) );
         diasAmount.text( calculatorDias.val() );
         dias = calculatorDias.val() * 1;
@@ -84,6 +113,10 @@ $(document).ready( function () {
         } else {
             dias = calculatorDinero.val() * 1;
         }
+
+        var calculatorInteres = $('#id_Interes').val();
+        var calculatorGestion = $('#id_Gestion').val();
+        var calculatorSeguro = $('#id_Seguro').val();
 
         dineroAmount.text( '$' + commaSeparateNumber(calculatorDinero.val()) );
         diasAmount.text( calculatorDias.val() );

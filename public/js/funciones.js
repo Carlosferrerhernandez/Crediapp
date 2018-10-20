@@ -1,4 +1,4 @@
-function gestion(){
+/*function gestion(){
     $.ajax({
         headers:{
             'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
@@ -6,6 +6,7 @@ function gestion(){
         url:'/search',
         method:'GET',
         success: function(respuesta){
+            console.log(respuesta);
             $('#valores').html(
                 `<input type="hidden" id="id_Interes" value="${respuesta[0]['interes']}">
                 <input type="hidden" id="id_Gestion" value="${respuesta[0]['gestion_credito']}">
@@ -13,4 +14,4 @@ function gestion(){
             `);
         }
     });
-}
+}*/
