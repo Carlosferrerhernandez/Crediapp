@@ -22,7 +22,7 @@ Route::get('/search', 'GestionCreditoController@search');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/panel', 'HomeController@index')->name('home');
 
 /*
 *	Susbcripcion route
