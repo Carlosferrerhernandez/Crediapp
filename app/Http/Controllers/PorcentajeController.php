@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\GestionCredito;
+use App\Porcentaje;
 
-class GestionCreditoController extends Controller
+class PorcentajeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,36 +38,6 @@ class GestionCreditoController extends Controller
         //
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function search(Request $request)
-    {
-        if ($request->ajax()) {
-            
-            $data = GestionCredito::all();
-
-            $resultados = [];
-
-            if (count($data) != 0) {
-                foreach ($data as $porcentaje) {
-
-                    $resultados[]= [
-                        'interes'=>$porcentaje->interes, 
-                        'gestion_credito'=>$porcentaje->gestion_credito, 
-                        'seguro_bancario'=>$porcentaje->seguro_bancario
-                    ];
-                }
-            }
-
-            return response()->json($resultados);
-        }
-    }
-
     /**
      * Display the specified resource.
      *
@@ -86,8 +56,19 @@ class GestionCreditoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        /*
+        *   Obtener el porcentaje
+        */
+        $porcentaje = Porcentaje::find($id);
+
+        /*
+        *   Verificar si el dato es correcto
+        */
+
+        $porcentaje = Porcentaje::findOrFail($id);
+
+        return view('porcentajes.edit', compact('porcentaje'));
     }
 
     /**
@@ -98,8 +79,32 @@ class GestionCreditoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+
+        /*dd($request);*/
+        
+        /*
+        *   Obtener porcentaje
+        */
+
+        $porcentaje = Porcentaje::find($id);
+        
+        $porcentaje->gestion_credito = $request->gestion_credito;
+        $porcentaje->seguro_bancario = $request->seguro_bancario;
+        $porcentaje->interes = $request->interes;
+        $porcentaje->detalle_cambio = $request->detalle_cambio;
+
+        if($porcentaje->save()){
+            
+            alert()->success('Se han editado los valores', '')->autoClose(10000)->showCloseButton('aria-label');
+            return Redirect('/panel');
+        }
+
+        else{
+            
+            alert()->error('No se lograron editar los valores', '')->autoClose(10000)->showCloseButton('aria-label');
+            return redirect('/panel');
+        }
     }
 
     /**

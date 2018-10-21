@@ -4,7 +4,7 @@ This repo is implementaions of Graphitech Agency. All rights reserved.
 
 ### Requerimientos ###
 * PHP >= 7.2.0
-* Laravel >= 5.6
+* Laravel >= 5.7.9
 * Composer
 * Git
 * MySQL

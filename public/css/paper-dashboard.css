@@ -2309,12 +2309,12 @@ h6 {
 }
 
 a {
-  color: #51cbce;
+  color: #1EDC74;
 }
 
 a:hover,
 a:focus {
-  color: #51cbce;
+  color: #1EDC74;
 }
 
 h1,
@@ -2825,7 +2825,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 }
 
 .navbar a.dropdown-item {
-  color: #66615B;
+  color: #58d18f;
 }
 
 .navbar.bg-white .input-group .form-control,
@@ -3069,7 +3069,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 .navbar.navbar-transparent .nav-item .nav-link:not(.btn):hover,
 .navbar.navbar-transparent .nav-item .nav-link:not(.btn):focus:hover,
 .navbar.navbar-transparent .nav-item .nav-link:not(.btn):active {
-  color: #51cbce;
+  color: #1EDC74;
 }
 
 .navbar.bg-white a:not(.dropdown-item):not(.btn) {
@@ -3408,7 +3408,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:focus {
-  background-color: #66615B;
+  background-color: #58d18f;
 }
 
 .dropdown-menu.dropdown-primary .dropdown-item:hover,
@@ -5734,7 +5734,7 @@ License - nucleoapp.com/license/
 }
 
 .card-stats .card-body .numbers .card-category {
-  color: #9A9A9A;
+  color: #000000;
   font-size: 16px;
   line-height: 1.4em;
 }

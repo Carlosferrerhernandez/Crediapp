@@ -3,20 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Subcription;
+use App\Suscripciones;
 
-class SubscriptionController extends Controller
+class SuscripcionController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
-
+    
     /**
      * Get a validator for an incoming registration request.
      *
@@ -38,7 +29,14 @@ class SubscriptionController extends Controller
      */
     public function index(Request $request)
     {   
-		return view('suscripciones.index');
+        /*
+        *  Retornar valores
+        */
+        $data = Suscripciones::all();
+
+        /*dd($data);*/
+
+        return view('suscripciones.index', compact('data'));
 
     }
 
@@ -54,7 +52,7 @@ class SubscriptionController extends Controller
 
     	// Register contact
 
-        $subscription = new Subcription();
+        $subscription = new Suscripciones();
 
         $subscription->suscMail = $request->suscMail;
         $subscription->save();

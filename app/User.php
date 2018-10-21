@@ -28,6 +28,15 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    /**
+     * obtener las solicitudes de un usuario.
+     */
+    public function solicitudes()
+    {
+        return $this->hasMany('App\Solicitud');
+    }
+
     // Relacion de muchos a muchos, tabla roles
 
     public function roles()

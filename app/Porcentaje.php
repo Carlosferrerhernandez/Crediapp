@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class GestionCredito extends Model
+class Porcentaje extends Model
 {
     protected $table = "panel_porcentajes";
 

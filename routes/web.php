@@ -18,16 +18,21 @@ Route::get('/', function () {
 /*
 *	Controladro buscar porcentaje-credito
 */
-Route::get('/search', 'GestionCreditoController@search');
+
+Route::get('/search', 'SearchController@search');
 
 Auth::routes();
+
+Route::resource('porcentajes', 'PorcentajeController');
+
+Route::resource('solicitudes', 'SolicitudController');
 
 Route::get('/panel', 'HomeController@index')->name('home');
 
 /*
 *	Susbcripcion route
 */
-Route::get('/subscription', 'SubscriptionController@index')->name('subscription.index');
-Route::post('/subscription', 'SubscriptionController@store')->name('subscription.store');
+Route::get('/suscripciones', 'SuscripcionController@index')->name('suscripciones.index');
+Route::post('/suscripciones', 'SuscripcionController@store')->name('suscripciones.store');
 
 

@@ -16,10 +16,11 @@ class CreatePanelPorcentajesTable extends Migration
         Schema::create('panel_porcentajes', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('gestion_credito');
-            $table->integer('seguro_bancario');
-            $table->integer('interes');
-            
+            $table->decimal('gestion_credito', 8, 2);
+            $table->decimal('seguro_bancario', 8, 2);
+            $table->decimal('interes', 8, 2);
+            $table->text('detalle_cambio', 255);
+
             $table->timestamps();
         });
     }
