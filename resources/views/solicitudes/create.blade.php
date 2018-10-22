@@ -184,6 +184,15 @@
 		</div>
 		<h4>Actividad Económica</h4>
 		<div class="row">
+			<input type="hidden" id="valor_interes" name="valor_interes" value="">
+			<input type="hidden" id="valor_total_pagar" name="valor_total_pagar" value="">
+			<input type="hidden" id="valor_seguro" name="valor_seguro" value="">
+			<input type="hidden" id="valor_solicitado" name="valor_solicitado" value="">
+			<input type="hidden" id="valor_gestion" name="valor_gestion" value="">
+			
+			<input type="hidden" id="dias_limite" name="dias_limite" value="">
+		</div>
+		<div class="row">
 			<div class="col-md-12 align-self-end">
 				<div class="actividadGroup row">
 					<div class="col-md-4 col-lg-3 align-self-end">
@@ -375,7 +384,27 @@
             });
 
 	});
+</script>
 
+<script>
+	$(document).ready(function(){
+
+		var valores = JSON.parse(localStorage.getItem("valores"));
+
+		var dias = JSON.parse(localStorage.getItem("dias"));
+
+		console.log(valores);
+		console.log(dias);
+		
+		document.getElementById("valor_interes").setAttribute('value', valores.interes);
+		document.getElementById("valor_total_pagar").setAttribute('value', valores.result);
+		document.getElementById("valor_seguro").setAttribute('value', valores.seguro);
+		document.getElementById("valor_solicitado").setAttribute('value', valores.valor);
+		document.getElementById("valor_gestion").setAttribute('value', valores.gestion);
+
+		document.getElementById("dias_limite").setAttribute('value', dias.dias)	;
+
+	});
 </script>
 
 @endsection
