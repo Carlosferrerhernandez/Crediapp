@@ -131,7 +131,9 @@
                             </table>
                         </form>
                     </div>
+                    <a href="{{ route('solicitudes.create')}}">
                     <button>Solicitar</button>
+                    </a>
                 </div>
             </div>
         </div>

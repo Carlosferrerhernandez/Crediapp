@@ -49,7 +49,7 @@ class SolicitudController extends Controller
     public function store(Request $request)
     {   
 
-        /*dd($request);*/
+        /*dd($request->ocupacion);*/
         
         /*
         *   Creacion de usuario
@@ -70,15 +70,19 @@ class SolicitudController extends Controller
         $user->password = Hash::make($request->n_documento);
         $user->save();
 
-        $conyuge = $user->conyuges()->create([
-            'nombres_conyuge' => $request->nombres_conyuge,
-            'apellido_conyuge' => $request->apellido_conyuge,
-            'documento_conyuge' => $request->documento_conyuge,
-            'lugar_conyuge' => $request->lugar_conyuge,
-            'nacimiento_conyuge' => $request->nacimiento_conyuge,
-            'telefono_conyuge' => $request->telefono_conyuge,
 
-        ]);
+        if ( isset($request->nombres_conyuge)) {
+
+            $conyuge = $user->conyuges()->create([
+                'nombres_conyuge' => $request->nombres_conyuge,
+                'apellido_conyuge' => $request->apellido_conyuge,
+                'documento_conyuge' => $request->documento_conyuge,
+                'lugar_conyuge' => $request->lugar_conyuge,
+                'nacimiento_conyuge' => $request->nacimiento_conyuge,
+                'telefono_conyuge' => $request->telefono_conyuge,
+
+            ]);
+        }
 
         $ubicacion = $user->ubicaciones()->create([
             'ciudad' => $request->ciudad,
@@ -89,19 +93,38 @@ class SolicitudController extends Controller
 
         ]);
 
-        $actividad = $user->actividades()->create([
-            'empresa' => $request->empresa,
-            'ocupacion' => $request->ocupacion,
-            'cargo' => $request->cargo,
-            'telefono_empresa' => $request->telefono_empresa,
-            'direcccion_trabajo' => $request->direcccion_trabajo,
-            'ciudad_empresa' => $request->ciudad_empresa,
-            'actividad_independiente' => $request->actividad_independiente,
-            'direccion_independiente' => $request->direccion_independiente,
-            'ciudad_independiente' => $request->ciudad_independiente,
-            'otra_ocupacion' => $request->otra_ocupacion,
+        if ($request->ocupacion == 'Asalariado') {
+            
+                $actividad = $user->actividades()->create([
+                'ocupacion' => $request->ocupacion,
+                'cargo' => $request->cargo,
+                'empresa' => $request->empresa,
+                'telefono_empresa' => $request->telefono_empresa,
+                'direccion_laboral' => $request->direccion_laboral,
+                'ciudad_empresa' => $request->ciudad_empresa,
 
-        ]);
+            ]);
+        }
+
+        if ($request->ocupacion == 'Independiente') {
+            
+                $actividad = $user->actividades()->create([
+                'ocupacion' => $request->ocupacion,
+                'actividad_independiente' => $request->actividad_independiente,
+                'direccion_independiente' => $request->direccion_independiente,
+                'ciudad_independiente' => $request->ciudad_independiente,
+
+            ]);
+        }
+
+        if ($request->ocupacion == 'Otro') {
+
+                $actividad = $user->actividades()->create([
+                'ocupacion' => $request->ocupacion,
+                'otra_ocupacion' => $request->otra_ocupacion,
+
+            ]);
+        }
 
         $referencia = $user->referencias()->create([
             'nombre_referencia' => $request->nombre_referencia,
@@ -109,19 +132,29 @@ class SolicitudController extends Controller
             'telefono_referencia' => $request->telefono_referencia,
 
         ]);
-        
+
         for ($i=0; $i < count ($request->nombre_banco) ; $i++) { 
 
-           $banco = $user->bancos()->createMany([
-                [   
-                    'nombre_banco' => $request->nombre_banco[$i],
-                    'n_cuenta' => $request->n_cuenta[$i],
-                    't_cuenta' => $request->t_cuenta[$i],
-                ],
-            ]);
-        }
+         $banco = $user->bancos()->createMany([
+            [   
+                'nombre_banco' => $request->nombre_banco[$i],
+                'n_cuenta' => $request->n_cuenta[$i],
+                't_cuenta' => $request->t_cuenta[$i],
+            ],
+        ]);
+     }
 
-    }
+     $prestamo = $user->prestamos()->create([
+        'valor_gestion' => $request->valor_gestion,
+        'valor_interes' => $request->valor_interes,
+        'valor_total_pagar' => $request->valor_total_pagar,
+        'valor_seguro' => $request->valor_seguro,
+        'valor_solicitado' => $request->valor_solicitado,
+        'dias_limite' => $request->dias_limite,
+
+    ]);
+
+ }
 
     /**
      * Display the specified resource.
