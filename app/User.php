@@ -77,6 +77,14 @@ class User extends Authenticatable
         return $this->hasMany('App\Conyuge');
     }
 
+    /**
+     * obtener las solicitudes de un usuario.
+     */
+    public function prestamos()
+    {
+        return $this->hasMany('App\Prestamo');
+    }
+
     // Relacion de muchos a muchos, tabla roles
 
     public function roles()

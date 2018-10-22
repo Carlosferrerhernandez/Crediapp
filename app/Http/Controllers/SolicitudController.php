@@ -109,14 +109,7 @@ class SolicitudController extends Controller
             'telefono_referencia' => $request->telefono_referencia,
 
         ]);
-
-        /*$banco = $user->bancos()->create([
-            'nombre_banco' => $request->nombre_banco,
-            'n_cuenta' => $request->n_cuenta,
-            't_cuenta' => $request->t_cuenta,
-
-        ]);*/
-
+        
         for ($i=0; $i < count ($request->nombre_banco) ; $i++) { 
 
            $banco = $user->bancos()->createMany([

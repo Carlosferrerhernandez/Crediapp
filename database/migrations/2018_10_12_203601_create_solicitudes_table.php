@@ -15,7 +15,7 @@ class CreateSolicitudesTable extends Migration
     {
         Schema::create('solicitudes', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('estado_solicitud', ['Aprobado', 'Desaprobado'])->default('Aprobado');
+            $table->enum('estado_solicitud', ['Pendiente', 'Aprobado', 'Desaprobado'])->default('Pendiente');
 
             /*
             * Relacion con tabla usuarios
