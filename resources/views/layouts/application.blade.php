@@ -66,14 +66,14 @@
         <div class="container-fluid">
             <div class="row foot-info">
                 <div class="col d-none d-md-block">
-                    <a href="#inicio">Inicio</a><br>
-                    <a href="#requisitos">Requisitos</a><br>
-                    <a href="#beneficios">Beneficios</a>
+                    <a href="{{ url('/')}}">Inicio</a><br>
+                    <a href="{{ url('/')}}#requisitos">Requisitos</a><br>
+                    <a href="{{ url('/')}}#beneficios">Beneficios</a>
                 </div>
                 <div class="col d-none d-md-block">
-                    <a href="#como">Cómo funciona</a><br>
-                    <a href="#testimonios">Testimonios</a><br>
-                    <a href="#pqr">PQR</a>
+                    <a href="{{ url('/')}}#como">Cómo funciona</a><br>
+                    <a href="{{ url('/')}}#testimonios">Testimonios</a><br>
+                    <a href="{{ url('/')}}#pqr">PQR</a>
                 </div>
                 <div class="col-md col-sm-12">
                     Síguenos en redes sociales<br>
