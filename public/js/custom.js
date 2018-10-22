@@ -62,6 +62,8 @@ gestion();
         var calculatorGestion = $('#id_Gestion').val();
         var calculatorSeguro = $('#id_Seguro').val();
 
+
+
         dineroAmount.text( '$' + commaSeparateNumber(calculatorDinero.val()) );
         diasAmount.text( calculatorDias.val() );
         dias = calculatorDias.val() * 1;
@@ -74,6 +76,9 @@ gestion();
         seguroAmount.text( '$' + commaSeparateNumber(seguro.toFixed(0)) );
         result = valor + interes + gestion + seguro;
         calculatorResult.text( '$' + commaSeparateNumber(result.toFixed(0)) );
+
+
+
     });
 
 
@@ -104,9 +109,27 @@ gestion();
         seguroAmount.text( '$' + commaSeparateNumber(seguro.toFixed(0)) );
         result = valor + interes + gestion + seguro;
         calculatorResult.text( '$' + commaSeparateNumber(result.toFixed(0)) );
+
+        var save_interes = interes.toFixed(0);
+        var save_gestion = gestion.toFixed(0);
+        var save_seguro = seguro.toFixed(0);
+        var save_result = result.toFixed(0);
+
+        var valores = {valor:valor, interes:save_interes, gestion:save_gestion, seguro:save_seguro, result:save_result };
+        
+        if (typeof(Storage) !== "undefined") {
+
+            localStorage.setItem("valores", JSON.stringify(valores) );
+            
+        } else {
+            // LocalStorage no soportado en este navegador
+        }
+         
     });
 
     calculatorDias.on('change', function () {
+
+        
 
         if ( calculatorDinero.val() === '' || isNaN( calculatorDinero.val() ) ) {
             alert('Enter bill amount, please!')
@@ -130,11 +153,18 @@ gestion();
         seguroAmount.text( '$' + commaSeparateNumber(seguro.toFixed(0)) );
         result = valor + interes + gestion + seguro;
         calculatorResult.text( '$' + commaSeparateNumber(result.toFixed(0)) );
-    });
 
-   /* $(window).on('load', function () {
-        gestion();
-    });*/
+        var dias = { dias:dias };
+        
+        if (typeof(Storage) !== "undefined") {
+
+            localStorage.setItem("dias", JSON.stringify(dias));
+            
+        } else {
+            // LocalStorage no soportado en este navegador
+        }
+         
+    });
 
 });
 
