@@ -18,13 +18,15 @@ class CreateUsersTable extends Migration
             $table->char('nombres');
             $table->char('apellidos');
             $table->char('lugar_expedicion');
-            $table->enum('t_documento', ['CC', 'TI', 'CE'])->default('CC');
-            $table->integer('n_documento')->unique();
-            $table->integer('n_celular');
+            $table->date('fecha_expedicion');
+            /*$table->enum('t_documento', ['CC', 'TI', 'CE'])->default('CC');*/
+
+            $table->bigInteger('n_documento')->unique();
+            $table->bigInteger('n_celular');
             $table->string('email');
+            $table->string('user_name');
             $table->timestamp('email_verified_at')->nullable();
-            $table->enum('e_civil', ['Soltero', 'Casado', 'Separado', 'Viudo', 'Union libre'])->default('Soltero');
-            $table->char('user_name');
+            $table->enum('e_civil', ['Soltero', 'Casado', 'Separado', 'Viudo', 'Union libre', 'Otro'])->default('Soltero');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'nombres', 'apellidos', 'password', 'lugar_expedicion', 'fecha_expedicion', 'n_documento', 'n_celular', 'email', 'email_verified_at',
     ];
 
     /**
@@ -35,6 +35,46 @@ class User extends Authenticatable
     public function solicitudes()
     {
         return $this->hasMany('App\Solicitud');
+    }
+
+    /**
+     * obtener las ubicaciones de un usuario.
+     */
+    public function ubicaciones()
+    {
+        return $this->hasMany('App\Ubicacion');
+    }
+
+    /**
+     * obtener las actividades de un usuario.
+     */
+    public function actividades()
+    {
+        return $this->hasMany('App\Actividad');
+    }
+
+    /**
+     * obtener las referencias de un usuario.
+     */
+    public function referencias()
+    {
+        return $this->hasMany('App\Referencia');
+    }
+
+    /**
+     * obtener los bancos de un usuario.
+     */
+    public function bancos()
+    {
+        return $this->hasMany('App\Banco');
+    }
+
+    /**
+     * obtener las solicitudes de un usuario.
+     */
+    public function conyuges()
+    {
+        return $this->hasMany('App\Conyuge');
     }
 
     // Relacion de muchos a muchos, tabla roles
@@ -76,7 +116,5 @@ class User extends Authenticatable
         }
         return false;
     }
-
-
 
 }

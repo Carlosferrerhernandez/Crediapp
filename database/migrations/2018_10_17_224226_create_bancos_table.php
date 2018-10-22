@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBancaTable extends Migration
+class CreateBancosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateBancaTable extends Migration
      */
     public function up()
     {
-        Schema::create('banca', function (Blueprint $table) {
+        Schema::create('bancos', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->char('bancos');
+            $table->char('nombre_banco');
+            $table->bigInteger('n_cuenta');
             $table->enum('t_cuenta', ['Corriente', 'Ahorros', 'Nomina']);
 
             /*
@@ -36,6 +37,6 @@ class CreateBancaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('banca');
+        Schema::dropIfExists('bancos');
     }
 }

@@ -246,7 +246,7 @@ $(document).ready(function() {
 		e.preventDefault();
 		if(x < max_fields){ //max input box allowed
 			x++; //text box increment
-			$(wrapper).append('<div class="col-md-4"><div class="md-form"><input type="text" class="form-control" id="nombreReferencia" name="nombreReferencia"><label for="nombreReferencia">Banco</label></div></div><div class="col-md-4"><div class="md-form"><input type="text" class="form-control" id="direccionReferencia" name="direccionReferencia"><label for="direccionReferencia">Tipo de Cuenta</label></div></div><div class="col-md-4"><div class="md-form"><input type="number" class="form-control" id="cuenta" name="cuenta"><label for="cuenta">Número de cuenta</label></div></div>'); //add input box
+			$(wrapper).append('<div class="col-md-4"><div class="md-form"><input type="text" class="form-control" id="nombre_banco" name="nombre_banco[]"><label for="nombre_banco">Banco</label></div></div><div class="col-md-4"><div class="md-form"><input type="text" class="form-control" id="t_cuenta" name="t_cuenta[]"><label for="t_cuenta">Tipo de Cuenta</label></div></div><div class="col-md-4"><div class="md-form"><input type="number" class="form-control" id="n_cuenta" name="n_cuenta[]"><label for="n_cuenta">Número de cuenta</label></div></div>'); //add input box
 		}
 	});
 	

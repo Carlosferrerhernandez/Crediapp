@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUbicacionesTable extends Migration
+class CreateReferenciasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateUbicacionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ubicaciones', function (Blueprint $table) {
+        Schema::create('referencias', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('direccion');
-            $table->char('barrio');
-            $table->char('ciudad');
-            $table->char('departamento');
-            $table->enum('vivienda', ['Propia', 'Alquilada', 'Familiar'])->default('Alquilada');
+
+            $table->char('nombre_referencia');
+            $table->char('direccion_referencia');
+            $table->bigInteger('telefono_referencia');
 
             /*
             * Relacion con tabla usuarios
@@ -38,6 +37,6 @@ class CreateUbicacionesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ubicaciones');
+        Schema::dropIfExists('referencias');
     }
 }

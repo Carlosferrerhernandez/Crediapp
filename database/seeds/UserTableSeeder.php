@@ -24,9 +24,11 @@ class UserTableSeeder extends Seeder
         $user->email = 'admin@example.com';
         $user->e_civil = 'Soltero';
         $user->n_documento = '11111';
+        /*$user->t_documento = 'CC';*/
         $user->n_celular = '300505000';
         $user->user_name = 'Administrador';
         $user->lugar_expedicion = 'Barranquilla';
+        $user->fecha_expedicion = '2018-10-21';
         $user->password = bcrypt('secret');
         $user->save();
         $user->roles()->attach($role_admin);
@@ -37,9 +39,11 @@ class UserTableSeeder extends Seeder
         $user->email = 'user@example.com';
         $user->e_civil = 'Soltero';
         $user->n_documento = '222222';
+        /*$user->t_documento = 'CC';*/
         $user->n_celular = '300505000';
         $user->user_name = 'Administrador';
         $user->lugar_expedicion = 'Barranquilla';
+        $user->fecha_expedicion = '2018-10-21';
         $user->password = bcrypt('secret');
         $user->save();
         $user->roles()->attach($role_user);

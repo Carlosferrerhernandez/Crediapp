@@ -15,11 +15,17 @@ class CreateActividadesTable extends Migration
     {
         Schema::create('actividades', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('ocupacion', ['Asalariado', 'Independiente', 'Pensionado', 'Socio']);
-            $table->string('otra_ocupacion');
-            $table->string('t_actividad');
-            $table->char('direcccion_trabajo');
-            $table->char('cuidad');
+            $table->enum('ocupacion', ['Asalariado', 'Independiente', 'Pensionado', 'Socio', 'Otro']);
+
+            $table->string('empresa')->nullable();
+            $table->string('cargo')->nullable();;
+            $table->bigInteger('telefono_empresa')->nullable();
+            $table->char('direcccion_trabajo')->nullable();
+            $table->char('ciudad_empresa')->nullable();
+            $table->char('actividad_independiente')->nullable();
+            $table->char('direccion_independiente')->nullable();
+            $table->char('ciudad_independiente')->nullable();
+            $table->char('otra_ocupacion')->nullable();
 
             /*
             * Relacion con tabla usuarios

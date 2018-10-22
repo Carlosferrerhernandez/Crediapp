@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReferenciasTable extends Migration
+class CreateConyugesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateReferenciasTable extends Migration
      */
     public function up()
     {
-        Schema::create('referencias', function (Blueprint $table) {
+        Schema::create('conyuges', function (Blueprint $table) {
             $table->increments('id');
-            $table->char('nombres');
-            $table->char('dir_residencia');
-            $table->char('cuidad');
-            $table->integer('n_telefono');
-            $table->integer('n_celular');
+            $table->char('nombres_conyuge')->nullable();
+            $table->char('apellido_conyuge')->nullable();
+            $table->bigInteger('documento_conyuge')->nullable();
+            $table->char('lugar_conyuge')->nullable();
+            $table->date('nacimiento_conyuge')->nullable();
+            $table->bigInteger('telefono_conyuge')->nullable();
 
             /*
             * Relacion con tabla usuarios
@@ -38,6 +39,6 @@ class CreateReferenciasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('referencias');
+        Schema::dropIfExists('conyuges');
     }
 }
