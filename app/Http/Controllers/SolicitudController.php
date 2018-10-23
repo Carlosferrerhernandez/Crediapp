@@ -9,6 +9,7 @@ use App\Conyuge;
 use App\Ubicacion;
 use App\Actividad;
 use Hash;
+use Redirect;
 
 class SolicitudController extends Controller
 {   
@@ -100,7 +101,7 @@ class SolicitudController extends Controller
                 'cargo' => $request->cargo,
                 'empresa' => $request->empresa,
                 'telefono_empresa' => $request->telefono_empresa,
-                'direccion_laboral' => $request->direccion_laboral,
+                'direcccion_trabajo' => $request->direcccion_trabajo,
                 'ciudad_empresa' => $request->ciudad_empresa,
 
             ]);
@@ -182,7 +183,16 @@ class SolicitudController extends Controller
      */
     public function show($id, $usuario)
     {   
-        /*dd($id);*/    
+        /*dd($id);*/ 
+
+        /*
+        *   Validacion consulta usuario indeseado
+        */  
+        /*$conyuges = Conyuge::findOrFail($usuario);*/
+
+        /*
+        *   Datos relacionados del usuario
+        */
 
         $user = User::find($usuario);
 
@@ -200,8 +210,6 @@ class SolicitudController extends Controller
 
         $cuentas = User::find($usuario)->bancos()->get();
 
-        /*dd($cuentas);*/
-        /*dd($solicitudes);*/
 
         return view('solicitudes.show', compact('user', 'solicitudes', 'conyuges', 'ubicaciones', 'actividades', 'referencias', 'cuentas', 'solicitudes'));
     }
@@ -225,8 +233,18 @@ class SolicitudController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $solicitud_id = $request->solicitud_id;
+
+        /*dd($request->solicitud_id);*/
+
+        $solicitud = Solicitud::find($solicitud_id);
+
+        $solicitud->estado_solicitud = $request->estado_solicitud;
+
+        $solicitud->save();
+
+        return Redirect::to('solicitudes');
     }
 
     /**

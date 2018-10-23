@@ -31,13 +31,12 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    {{-- <script src="{{asset('js/funciones.js')}}"></script> --}}
 </head>
 <body>
     <!-- Menú -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand page-scroll" href="#inicio"><img src="{{ asset('img/logo.gif') }}"></a>
+            <a class="navbar-brand page-scroll" href="{{ url('/') }}"><img src="{{ asset('img/logo.gif') }}"></a>
             <!-- Brand and toggle get grouped for better mobile display -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

@@ -311,22 +311,36 @@
 				<div class="md-form">
 					<select class="form-control" id="nombre_banco" name="nombre_banco[]">
 						<option selected="" disabled="true">Banco</option>
-						<option value="BANCO DE LA REPÚBLICA">BANCO DE LA REPUBLICA</option>
 						<option value="BANCO DE BOGOTA">BANCO DE BOGOTA</option>
+						<option value="BANCO POPULAR">BANCO POPULAR</option>
+						<option value="BANCO ITAU CORPBANCA COLOMBIA">BANCO ITAU CORPBANCA COLOMBIA</option>
 						<option value="BANCOLOMBIA">BANCOLOMBIA</option>
-						<option value="CITIBANK">CITIBANK</option>
-						<option value="BANCO GNB COLOMBIA">BANCO GNB COLOMBIA</option>
-						<option value="BANCO GNB SUDAMERIS COLOMBIA">BANCO GNB SUDAMERIS COLOMBIA</option>
-						<option value="BBVA">BBVA</option>
-						<option value="HELM BANK">HELM BANK</option>
-						<option value="RED MULTIBANCA COLPATRIA S.A.">RED MULTIBANCA COLPATRIA S.A.</option>
+						<option value="BANCO CITIBANK COLOMBIA">BANCO CITIBANK COLOMBIA</option>
+						<option value="BANCO GNB SUDAMERIS">BANCO GNB SUDAMERIS</option>
+						<option value="BBVA COLOMBIA">BBVA COLOMBIA</option>
+						<option value="ITAU HELM BANK">ITAU HELM BANK</option>
+						<option value="RED MULTIBANCA COLPATRIA">RED MULTIBANCA COLPATRIA</option>
 						<option value="BANCO DE OCCIDENTE">BANCO DE OCCIDENTE</option>
-						<option value="BANCO DE COMERCIO EXTERIOR DE COLOMBIA S.A. (BANCOLDEX)">BANCO DE COMERCIO EXTERIOR DE COLOMBIA S.A. (BANCOLDEX)</option>
-						<option value="BANCO CAJA SOCIAL - BCSC S.A.">BANCO CAJA SOCIAL - BCSC S.A.</option>
-						<option value="BANCO AGRARIO DE COLOMBIA S.A.">BANCO AGRARIO DE COLOMBIA S.A.</option>
-						<option value="BANCO DAVIVIENDA S.A.">BANCO DAVIVIENDA S.A.</option>
-						<option value="BANCO FALABELLA S.A.">BANCO FALABELLA S.A.</option>
-						<option value="BANCO SANTANDER">BANCO SANTANDER</option>
+						<option value="BANCO CAJA SOCIAL">BANCO CAJA SOCIAL</option>
+						<option value="BANCO AGRARIO DE COLOMBIA">BANCO AGRARIO DE COLOMBIA</option>
+						<option value="BANCO DAVIVIENDA">BANCO DAVIVIENDA</option>
+						<option value="BANCO AV VILLAS">BANCO AV VILLAS</option>
+						<option value="BANCO PROCREDIT COLOMBIA">BANCO PROCREDIT COLOMBIA</option>
+						<option value="BANCO PICHINCHA">BANCO PICHINCHA</option>
+						<option value="BANCOOMEVA">BANCOOMEVA</option>
+						<option value="FALLABELLA">FALLABELLA</option>
+						<option value="BANCO FINANDINA">BANCO FINANDINA</option>
+						<option value="BANCO MULTIBANK S.A.">BANCO MULTIBANK S.A.</option>
+						<option value="BANCO SANTANDER DE NEGOCIOS COLOMBIA">BANCO SANTANDER DE NEGOCIOS COLOMBIA</option>
+						<option value="BANCO COOPERATIVO COOPCENTRAL">BANCO COOPERATIVO COOPCENTRAL</option>
+						<option value="BANCO COMPARTIR SA">BANCO COMPARTIR SA</option>
+						<option value="FINANCIERA JURISCOOP">FINANCIERA JURISCOOP</option>
+						<option value="COOPERATIVA FINANCIERA DE ANTIOQUIA">COOPERATIVA FINANCIERA DE ANTIOQUIA</option>
+						<option value="COOPERATIVA FINANCIERA COTRAFA">COOPERATIVA FINANCIERA COTRAFA</option>
+						<option value="CONFIAR">CONFIAR</option>
+						<option value="SERFINANSA">SERFINANSA</option>
+						<option value="COLTEFINANCIERA">COLTEFINANCIERA 370</option>
+						<option value="NEQUI">NEQUI</option>
 					</select>
 				</div>
 			</div>
@@ -360,7 +374,7 @@
 		</div>
 		<div class="row submit-row">
 			<div class="col-12 text-center">
-				<button type="submit" class="btn-enviar" data-toggle="modal" data-target="#enviadoModal">Enviar solicitud</button>
+				<button type="submit" class="btn-enviar">Enviar solicitud</button>
 			</div>
 		</div>
 	</form>

@@ -24,7 +24,7 @@
 	<!-- Menú -->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top">
 		<div class="container-fluid">
-			<a class="navbar-brand page-scroll" href="http://crediapp.co/"><img src="{{asset('img/logo.png')}}"></a>
+			<a class="navbar-brand page-scroll" href="{{ url('/') }}"><img src="{{asset('img/logo.png')}}"></a>
 			<!-- Brand and toggle get grouped for better mobile display -->
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,7 +40,7 @@
 					<div class="card card-login">
 						<div class="card-header">
 							<div class="card-header">
-								<h3 class="header text-center">Inicio de sesión</h3>
+								<h3 class="header text-center">Iniciar sesión</h3>
 							</div>
 						</div>
 						<div class="card-body">
@@ -76,7 +76,7 @@
 							</div>
 						</div>
 						<div class="card-footer">
-							<button type="submit" class="btn btn-block mb-3 btn-sesion">Iniciar sesión</button>
+							<button type="submit" class="btn btn-block mb-3 btn-sesion">Ingresar</button>
 							<a href="{{ route('password.request') }}" class="btn btn-block mb-3 btn-olvide">Olvidaste tu contraseña</a>
 						</div>
 					</div>
