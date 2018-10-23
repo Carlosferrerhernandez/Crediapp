@@ -44,8 +44,8 @@ class MailController extends Controller
 
         });
 
-        alert('mensaje', 'Mensaje enviado correctamente');
-        return Redirect::to('/');
+        return Redirect::back()->with('success_contacto', 5);
+
     }
 
     /**

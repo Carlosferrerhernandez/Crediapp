@@ -441,6 +441,28 @@
         </div>
     </div>
 
+    <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="{{ asset('img/enviado-check.png')}}"><br>
+                    <h2>¡El correo de contacto fue enviado exitosamente!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="mostrarmodalsolicitud" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="{{ asset('img/enviado-check.png')}}"><br>
+                    <h2>¡Tu solicitud de crédito fue enviada exitosamente!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container-fluid">
             <div class="row foot-info">
@@ -482,6 +504,25 @@
             </div>
         </div>
     </footer>
+
+    @if(!empty(Session::get('success_contacto')) && Session::get('success_contacto') == 5)
+        <script type="text/javascript">
+            $(document).ready(function()
+                {
+                    $("#mostrarmodal").modal("show");
+                });
+        </script>
+    @endif
+
+    @if(!empty(Session::get('success_solicitud')) && Session::get('success_solicitud') == 5)
+        <script type="text/javascript">
+            $(document).ready(function()
+                {
+                    $("#mostrarmodalsolicitud").modal("show");
+                });
+        </script>
+    @endif
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

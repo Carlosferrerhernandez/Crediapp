@@ -173,6 +173,8 @@ class SolicitudController extends Controller
 
         ]);
 
+        return Redirect::to('/')->with('success_solicitud', 5);
+
  }
 
     /**
