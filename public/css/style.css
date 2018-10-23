@@ -779,7 +779,6 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 #solicitud form#datos_prestamo .submit-row {
-	background-color: #F7FAFB;
 	margin-top: 75px;
 	padding: 17px;
 	text-align: center;
@@ -788,7 +787,8 @@ input[type='range']::-webkit-slider-thumb {
 #solicitud form#datos_prestamo .submit-row button.btn-enviar {
 	background-color: #1EDC74;
 	height: 40px;
-	width: 300px;
+	max-width: 300px;
+	width: 100%;
 	border-radius: 20px;
 	color: #fff;
 	border: none;

@@ -4,7 +4,7 @@
  * https://github.com/wenzhixin/bootstrap-table/
  */
 
-
+.form-control:disabled {margin-bottom: 20px}
 
 /* color tabla */
 
@@ -762,7 +762,6 @@ div.dtr-modal div.dtr-modal-background {
 
 /* ---------------------------------------------------------------------- */
 
-
 .sidebar .sidebar-wrapper > .nav li > a,
 .off-canvas-sidebar .sidebar-wrapper > .nav li > a {
   margin: 10px 0px 0px;
@@ -775,9 +774,9 @@ div.dtr-modal div.dtr-modal-background {
 .off-canvas-sidebar .sidebar-wrapper > .nav li:hover > a {
   opacity: 1;
 }
-.sidebar .sidebar-wrapper > .nav li.active > a,
+.sidebar .sidebar-wrapper > .nav li.active > a, .sidebar .sidebar-wrapper > .nav li.active i,
 .off-canvas-sidebar .sidebar-wrapper > .nav li.active > a {
-  color: #7A9E9F;
+  color: #1EDC74;
   opacity: 1;
 }
 .sidebar .sidebar-wrapper > .nav li.separator,
@@ -991,8 +990,8 @@ body {
 .pagination > li.active > span:hover,
 .pagination > li.active > a:focus,
 .pagination > li.active > span:focus {
-  background-color: #58d18f;
-  border-color: #58d18f;
+  background-color: #1EDC74;
+  border-color: #1EDC74;
   color: #FFFFFF;
 }
 

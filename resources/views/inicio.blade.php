@@ -435,7 +435,7 @@
                     <p class="contacto-titulo">Atención al cliente</p>
                     <p class="contacto-contenido">316 906 3779</p>
                     <p class="contacto-titulo">Escríbenos</p>
-                    <p class="contacto-contenido">servicioalcliente@crediapp.com</p>
+                    <p class="contacto-contenido">servicioalcliente@crediapp.co</p>
                 </div>
             </div>
         </div>
