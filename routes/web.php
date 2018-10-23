@@ -23,6 +23,8 @@ Route::get('/search', 'SearchController@search');
 
 Auth::routes();
 
+Route::resource('mail', 'MailController');
+
 Route::resource('porcentajes', 'PorcentajeController');
 
 Route::get('solicitudes/{id}/user/{usuario}', 'SolicitudController@show', function($id){

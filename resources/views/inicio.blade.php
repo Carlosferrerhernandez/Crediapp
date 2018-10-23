@@ -398,27 +398,28 @@
     <div class="container-fluid" id="contacto">
         <div class="row">
             <div class="col-lg-9">
-                <form id="homeForm">
+                <form id="homeForm" method="POST" action="{{ route('mail.store') }}" id="suscribir">
+                        {{ csrf_field() }}
                     <div class="row">
                         <div class="col-md-6">
                             <h2>Contáctanos</h2>
                             <p>¡Es un gusto poder ayudarte!  responderemos tus dudas e inquietudes en el menor tiempo posible.</p>
                             <div class="md-form">
-                                <input type="text" class="form-control" id="homeName" name="homeName">
+                                <input type="text" class="form-control" id="homeName" name="nombre_mail">
                                 <label for="homeName">Nombre completo</label>
                             </div>
                             <div class="md-form">
-                                <input type="email" class="form-control" id="homeMail" name="homeMail">
+                                <input type="email" class="form-control" id="homeMail" name="dir_email">
                                 <label for="homeMail">Correo electrónico</label>
                             </div>
                             <div class="md-form">
-                                <input type="tel" class="form-control" id="homeCell" name="homeCell">
+                                <input type="tel" class="form-control" id="homeCell" name="tel_mail">
                                 <label for="homeCell">Celular</label>
                             </div>
                         </div>
                         <div class="col-md-6 align-self-end">
                             <div class="md-form">
-                                <textarea onkeyup="auto_grow(this)" class="form-control align-self-end" id="homeMsg" name="homeMsg" rows="1"></textarea>
+                                <textarea onkeyup="auto_grow(this)" class="form-control align-self-end" id="homeMsg" name="mensaje_mail" rows="1"></textarea>
                                 <label for="homeMsg">Mensaje</label>
                             </div>
                         </div>
