@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'mail.crediapp.co'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 465),
+    'port' => env('MAIL_PORT', 25),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'carlosrecuperacion@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Carlos Ferrer - Graphitech'),
+        'address' => env('MAIL_FROM_ADDRESS', 'servicioalcliente@crediapp.co'),
+        'name' => env('MAIL_FROM_NAME', 'Atención al cliente - Crediapp.co'),
     ],
 
     /*

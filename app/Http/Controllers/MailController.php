@@ -40,7 +40,7 @@ class MailController extends Controller
         Mail::send('correos.contacto', $request->all(), function($mensaje){
 
             $mensaje->subject('Correo de contacto');
-            $mensaje->to('carlosrecuperacion@gmail.com');
+            $mensaje->to('servicioalcliente@crediapp.co');
 
         });
 
