@@ -17,6 +17,13 @@ class CreateSolicitudesTable extends Migration
             $table->increments('id');
             $table->enum('estado_solicitud', ['Pendiente', 'Aprobado', 'Desaprobado'])->default('Pendiente');
 
+            $table->bigInteger('valor_gestion');
+            $table->bigInteger('valor_interes');
+            $table->bigInteger('valor_total_pagar');
+            $table->bigInteger('valor_seguro');
+            $table->bigInteger('valor_solicitado');
+            $table->bigInteger('dias_limite');
+            
             /*
             * Relacion con tabla usuarios
             */

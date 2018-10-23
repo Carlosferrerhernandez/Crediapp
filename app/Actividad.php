@@ -8,7 +8,7 @@ class Actividad extends Model
 {
     protected $table = "actividades";
 
-    protected $fillable = ['id', 'empresa', 'cargo', 'telefono_empresa', 'direcccion_trabajo', 'ciudad_empresa', 'actividad_independiente', 'direccion_independiente', 'ciudad_independiente', 'otra_ocupacion', 'user_id'];
+    protected $fillable = ['id', 'empresa', 'ocupacion', 'cargo', 'telefono_empresa', 'direcccion_trabajo', 'ciudad_empresa', 'actividad_independiente', 'direccion_independiente', 'ciudad_independiente', 'otra_ocupacion', 'user_id'];
 
     /**
      * obtener el usuario de la actividad.

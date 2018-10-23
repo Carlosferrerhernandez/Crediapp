@@ -14,6 +14,7 @@
 									<th class="text-center">Estado solicitud</th>
 									<th class="text-center">Nombre del solicitante</th>
 									<th class="text-center">Detalles</th>
+									<th class="text-center">Eliminar</th>
 								</tr>
 							</thead>
 							<tbody class="container-fluid">
@@ -21,9 +22,18 @@
 								<tr>
 									<td class="text-center">{{$solicitud->estado_solicitud}}</td>
 									<td class="text-center">{{$solicitud->user->nombres}} {{$solicitud->user->apellidos}}</td>
+									<br>
 									<td class="td-actions text-center">
-                                    <a href="{{ URL::to('solicitudes/' . $solicitud->id) }}" rel="tooltip" title="Ver mas" class="btn btn-success btn-link btn-icon btn-sm edit"><i class="fa fa-edit"></i>
+                                    <a href="{{ URL::to('solicitudes/' . $solicitud->id . '/user/' . $solicitud->user_id) }}" rel="tooltip" title="Ver mas" class="btn btn-success btn-link btn-icon btn-sm edit"><i class="fa fa-edit"></i>
                                     </a>
+                                    <td class="td-actions text-center">
+                                    	<a href="#" rel="tooltip" title="Eliminar">
+                                        <form action="{{ url('solicitudes/'.$solicitud->id) }}" method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <btn type="submit" class="btn btn-sm btn-danger btn-round btn-icon"><i class="nc-icon nc-simple-remove"></i></btn>
+                                        </form>
+                                    </td>
                                 </td>
 								</tr>
 								@endforeach

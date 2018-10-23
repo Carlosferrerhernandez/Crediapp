@@ -1,0 +1,76 @@
+body#login {
+	background-color: #EEF4F5;
+	font-family: 'Poppins', sans-serif;
+	background-image: url(../../img/login-bg.png);
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+
+body#login .navbar, body#login #login-form, body#login footer {
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+body#login .navbar-brand img {
+	height: 52px;
+	width: auto;
+}
+
+body#login #login-form {
+	height: 100vh;
+}
+
+body#login #login-form form {
+	max-width: 340px;
+	margin: 0 auto;
+	border: none;
+	background-color: #fff;
+	border-radius: 10px;
+}
+
+body#login #login-form form .card, body#login #login-form form .card-header, body#login #login-form form .card-footer {
+	border: none;
+	background-color: transparent;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+body#login #login-form form input {
+	margin-bottom: 10px;
+}
+
+body#login #login-form form .btn-sesion {
+	background-color: #1EDC74;
+	color: #fff;
+}
+
+body#login #login-form form .btn-olvide {
+	color: #1EDC74;
+}
+
+body#login #login-form form .btn-sesion:hover {
+	background-color:  #00AD3E;
+}
+
+body#login #login-form form .btn-olvide:hover {
+	color: #00AD3E;
+	text-decoration: underline;
+}
+
+body#login footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	color: #6F8F96;
+	font-size: 12px;
+}
+
+@media only screen and (max-width: 767px) {
+	body#login footer, body#login footer .text-right {
+		text-align: center !important;
+	}
+	body#login footer .text-right {
+		margin-top: 15px;
+	}
+}

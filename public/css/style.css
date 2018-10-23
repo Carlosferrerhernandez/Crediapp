@@ -90,7 +90,7 @@ a:hover {
 }
 
 .solicitar table {
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: 500;
 	color: #5F6E7C;
 	width: 100%;
@@ -106,7 +106,7 @@ a:hover {
 .solicitar table output {
 	display: inline;
 	font-weight: 600;
-	font-size: 12px;
+	font-size: 13px;
 	color: #5F6E7C;
 }
 
@@ -161,7 +161,7 @@ input[type='range']::-webkit-slider-thumb {
 
 .solicitar table.valores {
 	width: 100%;
-	font-size: 12px;
+	font-size: 13px;
 	line-height: 18px;
 	color: #87939E;
 	font-weight: 400;
@@ -577,11 +577,11 @@ input[type='range']::-webkit-slider-thumb {
 #contacto form#homeForm label, #contacto form#homeForm input, #contacto form#homeForm textarea {
 	padding-left: 35px;
 	width: calc(100% - 35px);
-	font-size: 12px;
+	font-size: 13px;
 }
 
 #contacto form#homeForm label {
-	font-size: 12px;
+	font-size: 13px;
 	line-height: 16px;
 	color: #748F98;
 	margin-bottom: 0;
@@ -671,7 +671,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 #solicitud p {
-	font-size: 12px;
+	font-size: 13px;
 	text-align: center;
 	color: #98ADB5;
 	font-weight: 500;
@@ -681,7 +681,7 @@ input[type='range']::-webkit-slider-thumb {
 #solicitud form#datos_prestamo {
 	max-width: 1030px;
 	margin: 0 auto 100px;
-	font-size: 12px;
+	font-size: 13px;
 }
 
 #solicitud form#datos_prestamo h4 {
@@ -692,7 +692,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 #solicitud form#datos_prestamo label {
-	font-size: 12px;
+	font-size: 13px;
 	margin-bottom: 0;
 }
 
@@ -701,8 +701,17 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 #solicitud form#datos_prestamo input {
-	font-size: 12px;
+	font-size: 13px;
 	padding-bottom: 0;
+}
+
+#solicitud form#datos_prestamo select {
+	font-size: 13px;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	border: none;
+	border-bottom: 1px solid #ced4da;
+	margin-top: 30px;
 }
 
 #solicitud form#datos_prestamo .align-self-end {
@@ -729,7 +738,7 @@ input[type='range']::-webkit-slider-thumb {
 #solicitud form#datos_prestamo button.agregarCuenta {
 	background-color: transparent;
 	color: #6F8E99;
-	font-size: 12px;
+	font-size: 13px;
 	margin-top: 50px;
 	border: none;
 	padding-left: 0;
@@ -742,7 +751,7 @@ input[type='range']::-webkit-slider-thumb {
 
 #solicitud form#datos_prestamo .custom-checkbox {
 	color: #6F8E99;
-	font-size: 12px;
+	font-size: 13px;
 	margin-top: 25px;
 }
 
@@ -1045,6 +1054,8 @@ footer .foot-copy {
 		right: 0;
 		margin-left: auto;
 		margin-right: auto;
+		padding-left: 0;
+		padding-right: 0;
 	}
 	input[type='range']::-webkit-slider-thumb {
 		height: 25px;
@@ -1131,6 +1142,10 @@ footer .foot-copy {
 		margin-top: 25px;
 	}
 	/* SOLICITUD */
+	#solicitud {
+		padding-left: 0;
+		padding-right: 0;
+	}
 	#solicitud form#datos_prestamo .align-self-end {
 		line-height: 25px;
 	}

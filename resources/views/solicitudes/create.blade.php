@@ -244,8 +244,8 @@
 			</div>
 			<div class="col-md-4">
 				<div class="md-form">
-					<input type="text" class="form-control" id="direccion_laboral" name="direccion_laboral">
-					<label for="direccion_laboral">Dirección laboral<span>*</span></label>
+					<input type="text" class="form-control" id="direcccion_trabajo" name="direcccion_trabajo">
+					<label for="direcccion_trabajo">Dirección laboral<span>*</span></label>
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -309,14 +309,35 @@
 		<div class="row infoBanco">
 			<div class="col-md-4">
 				<div class="md-form">
-					<input type="text" class="form-control" id="nombre_banco" name="nombre_banco[]">
-					<label for="nombre_banco">Banco<span>*</span></label>
+					<select class="form-control" id="nombre_banco" name="nombre_banco[]">
+						<option selected="" disabled="true">Banco</option>
+						<option value="BANCO DE LA REPÚBLICA">BANCO DE LA REPUBLICA</option>
+						<option value="BANCO DE BOGOTA">BANCO DE BOGOTA</option>
+						<option value="BANCOLOMBIA">BANCOLOMBIA</option>
+						<option value="CITIBANK">CITIBANK</option>
+						<option value="BANCO GNB COLOMBIA">BANCO GNB COLOMBIA</option>
+						<option value="BANCO GNB SUDAMERIS COLOMBIA">BANCO GNB SUDAMERIS COLOMBIA</option>
+						<option value="BBVA">BBVA</option>
+						<option value="HELM BANK">HELM BANK</option>
+						<option value="RED MULTIBANCA COLPATRIA S.A.">RED MULTIBANCA COLPATRIA S.A.</option>
+						<option value="BANCO DE OCCIDENTE">BANCO DE OCCIDENTE</option>
+						<option value="BANCO DE COMERCIO EXTERIOR DE COLOMBIA S.A. (BANCOLDEX)">BANCO DE COMERCIO EXTERIOR DE COLOMBIA S.A. (BANCOLDEX)</option>
+						<option value="BANCO CAJA SOCIAL - BCSC S.A.">BANCO CAJA SOCIAL - BCSC S.A.</option>
+						<option value="BANCO AGRARIO DE COLOMBIA S.A.">BANCO AGRARIO DE COLOMBIA S.A.</option>
+						<option value="BANCO DAVIVIENDA S.A.">BANCO DAVIVIENDA S.A.</option>
+						<option value="BANCO FALABELLA S.A.">BANCO FALABELLA S.A.</option>
+						<option value="BANCO SANTANDER">BANCO SANTANDER</option>
+					</select>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="md-form">
-					<input type="text" class="form-control" id="t_cuenta" name="t_cuenta[]">
-					<label for="t_cuenta">Tipo de Cuenta<span>*</span></label>
+					<select class="form-control" id="t_cuenta" name="t_cuenta[]">
+						<option selected="" disabled="true">Tipo de cuenta</option>
+						<option value="Ahorros">Ahorros</option>
+						<option value="Corriente">Corriente</option>
+						<option value="Nomina">Nómina</option>
+					</select>
 				</div>
 			</div>
 			<div class="col-md-4">

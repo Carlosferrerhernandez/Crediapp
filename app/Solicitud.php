@@ -8,7 +8,7 @@ class Solicitud extends Model
 {
     protected $table = "solicitudes";
 
-    protected $fillable = ['id', 'estado_solicitud', 'user_id'];
+    protected $fillable = ['id', 'estado_solicitud', 'valor_gestion', 'valor_interes', 'valor_total_pagar', 'valor_seguro', 'valor_solicitado', 'dias_limite', 'user_id'];
 
     /**
      * obtener el usuario de la solicitud.

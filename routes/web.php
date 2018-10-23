@@ -25,7 +25,11 @@ Auth::routes();
 
 Route::resource('porcentajes', 'PorcentajeController');
 
-Route::resource('solicitudes', 'SolicitudController');
+Route::get('solicitudes/{id}/user/{usuario}', 'SolicitudController@show', function($id){
+
+})->name('solicitudes.show');
+
+Route::resource('solicitudes', 'SolicitudController', ['except' => ['show']]);
 
 Route::get('/panel', 'HomeController@index')->name('home');
 

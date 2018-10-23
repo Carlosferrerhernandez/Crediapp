@@ -49,7 +49,7 @@ class SolicitudController extends Controller
     public function store(Request $request)
     {   
 
-        /*dd($request->ocupacion);*/
+        /*dd($request->otra_ocupacion);*/
         
         /*
         *   Creacion de usuario
@@ -96,7 +96,7 @@ class SolicitudController extends Controller
         if ($request->ocupacion == 'Asalariado') {
             
                 $actividad = $user->actividades()->create([
-                'ocupacion' => $request->ocupacion,
+                'ocupacion' => 'Asalariado',
                 'cargo' => $request->cargo,
                 'empresa' => $request->empresa,
                 'telefono_empresa' => $request->telefono_empresa,
@@ -106,10 +106,10 @@ class SolicitudController extends Controller
             ]);
         }
 
-        if ($request->ocupacion == 'Independiente') {
+        elseif ($request->ocupacion == 'Independiente') {
             
                 $actividad = $user->actividades()->create([
-                'ocupacion' => $request->ocupacion,
+                'ocupacion' => 'Independiente',
                 'actividad_independiente' => $request->actividad_independiente,
                 'direccion_independiente' => $request->direccion_independiente,
                 'ciudad_independiente' => $request->ciudad_independiente,
@@ -117,14 +117,31 @@ class SolicitudController extends Controller
             ]);
         }
 
-        if ($request->ocupacion == 'Otro') {
+        elseif ($request->ocupacion == 'Otro') {
 
                 $actividad = $user->actividades()->create([
-                'ocupacion' => $request->ocupacion,
+                'ocupacion' => 'Otro',
                 'otra_ocupacion' => $request->otra_ocupacion,
 
             ]);
         }
+
+        elseif ($request->ocupacion == 'Pensionado') {
+
+                $actividad = $user->actividades()->create([
+                'ocupacion' => 'Pensionado',
+
+            ]);
+        }
+
+        elseif ($request->ocupacion == 'Socio') {
+
+                $actividad = $user->actividades()->create([
+                'ocupacion' => 'Socio',
+
+            ]);
+        }
+
 
         $referencia = $user->referencias()->create([
             'nombre_referencia' => $request->nombre_referencia,
@@ -135,24 +152,25 @@ class SolicitudController extends Controller
 
         for ($i=0; $i < count ($request->nombre_banco) ; $i++) { 
 
-         $banco = $user->bancos()->createMany([
-            [   
-                'nombre_banco' => $request->nombre_banco[$i],
-                'n_cuenta' => $request->n_cuenta[$i],
-                't_cuenta' => $request->t_cuenta[$i],
-            ],
+            $banco = $user->bancos()->createMany([
+                [   
+                    'nombre_banco' => $request->nombre_banco[$i],
+                    'n_cuenta' => $request->n_cuenta[$i],
+                    't_cuenta' => $request->t_cuenta[$i],
+                ],
+            ]);
+        }
+
+        $solicitud = $user->solicitudes()->create([
+            'estado_solicitud' => 'Pendiente',
+            'valor_gestion' => $request->valor_gestion,
+            'valor_interes' => $request->valor_interes,
+            'valor_total_pagar' => $request->valor_total_pagar,
+            'valor_seguro' => $request->valor_seguro,
+            'valor_solicitado' => $request->valor_solicitado,
+            'dias_limite' => $request->dias_limite,
+
         ]);
-     }
-
-     $prestamo = $user->prestamos()->create([
-        'valor_gestion' => $request->valor_gestion,
-        'valor_interes' => $request->valor_interes,
-        'valor_total_pagar' => $request->valor_total_pagar,
-        'valor_seguro' => $request->valor_seguro,
-        'valor_solicitado' => $request->valor_solicitado,
-        'dias_limite' => $request->dias_limite,
-
-    ]);
 
  }
 
@@ -162,11 +180,30 @@ class SolicitudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $user = User::find($id)->conyuges()->get();
+    public function show($id, $usuario)
+    {   
+        /*dd($id);*/    
 
-        dd($user);
+        $user = User::find($usuario);
+
+        $conyuges = User::find($usuario)->conyuges()->get();
+
+        $referencias = User::find($usuario)->referencias()->get();
+
+        $solicitudes = User::find($usuario)->solicitudes()->where('id', $id)->first();
+
+        /*dd($solicitudes->valor_solicitado);*/
+
+        $ubicaciones = User::find($usuario)->ubicaciones()->get();
+
+        $actividades = User::find($usuario)->actividades()->get();
+
+        $cuentas = User::find($usuario)->bancos()->get();
+
+        /*dd($cuentas);*/
+        /*dd($solicitudes);*/
+
+        return view('solicitudes.show', compact('user', 'solicitudes', 'conyuges', 'ubicaciones', 'actividades', 'referencias', 'cuentas', 'solicitudes'));
     }
 
     /**
@@ -200,6 +237,12 @@ class SolicitudController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Solicitud::destroy($id);
+
+        Programa::destroy($id);
+
+        /*alert()->success('Se elimino correctamente', '')->autoClose(10000)->showCloseButton('aria-label');
+*/
+        return Redirect::to('solicitudes');
     }
 }
