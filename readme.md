@@ -1,5 +1,5 @@
 
-# Aviacion 
+# CrediApp 
 This repo is implementaions of Graphitech Agency. All rights reserved.
 
 ### Requerimientos ###
@@ -25,6 +25,7 @@ This repo is implementaions of Graphitech Agency. All rights reserved.
 ### Credits ###
 * Taylor Otwell (Creator of Laravel)
 * Carlos Ferrer
+* Graphitech Agency (http://graphitech.com.co)
 * SENA (http://www.sena.edu.co/es-co/Paginas/default.aspx)
 * SENNOVA
 
