@@ -21,6 +21,7 @@ class SolicitudController extends Controller
      */
     public function index()
     {   
+
         /*
         *  Retornar valores
         */
@@ -246,7 +247,8 @@ class SolicitudController extends Controller
 
         $solicitud->save();
 
-        return Redirect::to('solicitudes');
+        return Redirect::back()->with('success_solicitud', 5);
+
     }
 
     /**
@@ -257,12 +259,10 @@ class SolicitudController extends Controller
      */
     public function destroy($id)
     {
-        Solicitud::destroy($id);
+        $solicitud = Solicitud::find($id);
 
-        Programa::destroy($id);
-
-        /*alert()->success('Se elimino correctamente', '')->autoClose(10000)->showCloseButton('aria-label');
-*/
-        return Redirect::to('solicitudes');
+        $solicitud->delete();
+        
+        return Redirect::back();
     }
 }

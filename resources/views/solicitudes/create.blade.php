@@ -428,8 +428,8 @@
 
 		var dias = JSON.parse(localStorage.getItem("dias"));
 
-		console.log(valores);
-		console.log(dias);
+		/*console.log(valores);
+		console.log(dias);*/
 		
 		document.getElementById("valor_interes").setAttribute('value', valores.interes);
 		document.getElementById("valor_total_pagar").setAttribute('value', valores.result);

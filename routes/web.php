@@ -23,22 +23,47 @@ Route::get('/search', 'SearchController@search');
 
 Auth::routes();
 
+/*
+*	Ruta de email
+*/
 Route::resource('mail', 'MailController');
 
+
+/*
+*	Ruta controlador resource porcentajes
+*/
 Route::resource('porcentajes', 'PorcentajeController');
 
+/*Grupo de rutas solicitudes*/
+
+Route::get('solicitudes/create', 'SolicitudController@create', function($id){
+})->name('solicitudes.create');
+
+/*
+*	Middleware role:admin
+*/
 Route::get('solicitudes/{id}/user/{usuario}', 'SolicitudController@show', function($id){
+})->name('solicitudes.show')->middleware('auth');
 
-})->name('solicitudes.show');
+Route::get('solicitudes', 'SolicitudController@index', function($id){
+})->name('solicitudes.index')->middleware('auth');
 
-Route::resource('solicitudes', 'SolicitudController', ['except' => ['show']]);
+Route::resource('solicitudes', 'SolicitudController', ['except' => ['show', 'create', 'index']]);
+
+
+/*
+*	Ruta home principal
+*/
 
 Route::get('/panel', 'HomeController@index')->name('home');
 
 /*
 *	Susbcripcion route
 */
-Route::get('/suscripciones', 'SuscripcionController@index')->name('suscripciones.index');
-Route::post('/suscripciones', 'SuscripcionController@store')->name('suscripciones.store');
+Route::get('suscripciones', 'SuscripcionController@index')->name('suscripciones.index')->middleware('auth');
+Route::post('suscripciones', 'SuscripcionController@store')->name('suscripciones.store');
+
+Route::resource('suscripciones', 'SuscripcionController', ['except' => ['index', 'store', 'index']]);
+
 
 

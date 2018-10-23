@@ -331,6 +331,20 @@
 			</div>
 		</div>
 	</div>
+	
+	{{-- Modal success --}}
+
+	<div class="modal fade" id="mostrarmodalsolicitud" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="{{ asset('img/enviado-check.png')}}"><br>
+                    <h2>¡Se actualizo el estado del credito correctamente!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
 	{{-- @endforeach --}}
 	<form method="POST" id="edit_solicitud" action="{{ route('solicitudes.update', $solicitudes->id)}}" role="form">
 		{{ csrf_field() }}
@@ -351,6 +365,15 @@
 			<label>Desaprobado</label>
 		@endif
 	</form>
+
+	@if(!empty(Session::get('success_solicitud')) && Session::get('success_solicitud') == 5)
+        <script type="text/javascript">
+            $(document).ready(function()
+                {
+                    $("#mostrarmodalsolicitud").modal("show");
+                });
+        </script>
+    @endif
 
 </div>
 

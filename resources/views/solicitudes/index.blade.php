@@ -24,17 +24,16 @@
 									<td class="text-center">{{$solicitud->user->nombres}} {{$solicitud->user->apellidos}}</td>
 									<br>
 									<td class="td-actions text-center">
-                                    <a href="{{ URL::to('solicitudes/' . $solicitud->id . '/user/' . $solicitud->user_id) }}" rel="tooltip" title="Ver mas" class="btn btn-success btn-link btn-icon btn-sm edit"><i class="fa fa-edit"></i>
-                                    </a>
-                                    <td class="td-actions text-center">
-                                    	<a href="#" rel="tooltip" title="Eliminar">
-                                        <form action="{{ url('solicitudes/'.$solicitud->id) }}" method="POST">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                            <btn type="submit" class="btn btn-sm btn-danger btn-round btn-icon"><i class="nc-icon nc-simple-remove"></i></btn>
-                                        </form>
+                                    <a href="{{ URL::to('solicitudes/' . $solicitud->id . '/user/' . $solicitud->user_id) }}" target="_blank" rel="tooltip" title="Ver mas" class="btn btn-success">Ver detalle</a>  
+                                	</td>
+                                	<td class="td-actions text-center">
+                                    	<form action="/solicitudes/{{ $solicitud->id }}" method="POST">
+								            {{ csrf_field() }}
+								            {{ method_field('DELETE') }}
+
+								            <button id="eliminar" class="btn btn-danger">Borrar solicitud</button>
+								        </form>
                                     </td>
-                                </td>
 								</tr>
 								@endforeach
 							</tbody>
@@ -46,5 +45,14 @@
 	</div>    
 </div>
 
+<script>
+	$('#eliminar').submit(function(e){
+     confirm('Esta seguro de eliminar el registro?', function(result){
+            if(!result) {
+               return false;
+            }
+     }); 
+});
+</script>
 
 @endsection

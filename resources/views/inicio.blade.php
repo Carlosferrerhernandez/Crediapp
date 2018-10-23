@@ -463,6 +463,17 @@
         </div>
     </div>
 
+    <div class="modal fade" id="mostrarmodalsuscripcion" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="{{ asset('img/enviado-check.png')}}"><br>
+                    <h2>¡Te has suscribido exitosamente!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container-fluid">
             <div class="row foot-info">
@@ -522,7 +533,15 @@
                 });
         </script>
     @endif
-
+    
+    @if(!empty(Session::get('success_suscripcion')) && Session::get('success_suscripcion') == 5)
+        <script type="text/javascript">
+            $(document).ready(function()
+                {
+                    $("#mostrarmodalsuscripcion").modal("show");
+                });
+        </script>
+    @endif
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

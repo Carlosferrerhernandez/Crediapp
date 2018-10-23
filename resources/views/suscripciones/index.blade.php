@@ -12,17 +12,22 @@
 							<thead>
 								<tr>
 									<th class="text-center">Correo del suscriptor</th>
-									<th class="text-center">Detalles</th>
+									<th class="text-center">Eliminar</th>
 								</tr>
 							</thead>
 							<tbody class="container-fluid">
 								@foreach($data as $suscripcion)
 								<tr>
 									<td class="text-center">{{$suscripcion->suscMail}}</td>
-									<td class="td-actions text-center">
-                                    <a href="{{ URL::to('suscripciones/' . $suscripcion->id) }}" rel="tooltip" title="Ver mas" class="btn btn-success btn-link btn-icon btn-sm edit"><i class="fa fa-edit"></i>
-                                    </a>
-                                </td>
+                                	<br>
+                                	<td class="td-actions text-center">
+                                    	<form action="/suscripciones/{{ $suscripcion->id }}" method="POST">
+								            {{ csrf_field() }}
+								            {{ method_field('DELETE') }}
+
+								            <button id="eliminar" class="btn btn-danger">Borrar suscripcion</button>
+								        </form>
+                                    </td>
 								</tr>
 								@endforeach
 							</tbody>
@@ -33,5 +38,12 @@
 		</div>
 	</div>    
 </div>
+
+{{-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div> --}}
 
 @endsection
