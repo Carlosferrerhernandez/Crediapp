@@ -22,11 +22,11 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link href="{{ asset('demo/demo.css') }}" rel="stylesheet" />
 
-	{{-- <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> --}}
-
 	<link href="{{ asset('css/admin_style.css') }}" rel="stylesheet" />
 	
-	<!-- Datatables JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 	
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -46,7 +46,7 @@
 							<p>Panel de control</p>
 						</a>
 					</li>
-					<li class="{{ Request::is('solicitudes') ? 'active' : '' }}">
+					<li class="{{ Request::is('solicitudes') ? 'active' : '' || Request::is('solicitudes/*') ? 'active' : '' }}">
 						<a href="{{ route('solicitudes.index')}}">
 							<i class="nc-icon nc-tile-56"></i>
 							<p>Solicitudes</p>
@@ -105,6 +105,9 @@
 				</div>
 			</div>
 		</nav>
+		
+		@include('sweetalert::alert')
+
 		<div class="content">
 			@yield('content')
 		</div>

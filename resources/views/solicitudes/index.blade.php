@@ -24,7 +24,7 @@
 									<td class="text-center">{{$solicitud->user->nombres}} {{$solicitud->user->apellidos}}</td>
 									<br>
 									<td class="td-actions text-center">
-                                    <a href="{{ URL::to('solicitudes/' . $solicitud->id . '/user/' . $solicitud->user_id) }}" target="_blank" rel="tooltip" title="Ver mas" class="btn btn-success">Ver detalle</a>  
+                                    <a href="{{ URL::to('solicitudes/' . $solicitud->id . '/user/' . $solicitud->user_id) }}" rel="tooltip" title="Ver mas" class="btn btn-success">Ver detalle</a>  
                                 	</td>
                                 	<td class="td-actions text-center">
                                     	<form action="/solicitudes/{{ $solicitud->id }}" method="POST">

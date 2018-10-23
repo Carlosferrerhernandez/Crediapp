@@ -51,6 +51,37 @@ class SolicitudController extends Controller
     public function store(Request $request)
     {   
 
+        if ($userdoc = User::where("n_documento", "=", $request->n_documento)->select("id")->get()) {
+
+            /*dd($userdoc);*/
+
+            foreach ($userdoc as $value) {
+                
+               $id_user = $value->id;
+            }
+
+            /*dd($id_user);*/
+
+            /*$user = User::where("id", $id_user)->get();*/
+
+            $user = User::find($id_user);
+
+            /*dd($user);*/
+
+            $solicitud = $user->solicitudes()->create([
+            'estado_solicitud' => 'Pendiente',
+            'valor_gestion' => $request->valor_gestion,
+            'valor_interes' => $request->valor_interes,
+            'valor_total_pagar' => $request->valor_total_pagar,
+            'valor_seguro' => $request->valor_seguro,
+            'valor_solicitado' => $request->valor_solicitado,
+            'dias_limite' => $request->dias_limite,
+
+        ]);
+        
+        }
+
+        else{
         /*dd($request->otra_ocupacion);*/
         
         /*
@@ -174,6 +205,8 @@ class SolicitudController extends Controller
 
         ]);
 
+    }
+
         return Redirect::to('/')->with('success_solicitud', 5);
 
  }
@@ -247,7 +280,9 @@ class SolicitudController extends Controller
 
         $solicitud->save();
 
-        return Redirect::back()->with('success_solicitud', 5);
+        alert()->success('Solicitud actualizada correctamente', '')->autoClose(10000)->showCloseButton('aria-label');
+
+        return Redirect::back()/*->with('success_solicitud', 5)*/;
 
     }
 
@@ -262,7 +297,9 @@ class SolicitudController extends Controller
         $solicitud = Solicitud::find($id);
 
         $solicitud->delete();
-        
+
+        alert()->success('Solicitud eliminada correctamente', '')->autoClose(10000)->showCloseButton('aria-label');
+
         return Redirect::back();
     }
 }

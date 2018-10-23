@@ -96,6 +96,8 @@ class SuscripcionController extends Controller
         $suscripcion = Suscripcion::find($id);
 
         $suscripcion->delete();
+
+        alert()->success('Suscripcion eliminada correctamente', '')->autoClose(10000)->showCloseButton('aria-label');
         
         return Redirect::back();
     }
