@@ -60,6 +60,7 @@ a:hover {
 	background-image: url(../../img/hero.jpg);
 	background-position: bottom left;
 	background-repeat: no-repeat;
+	background-size: cover;
 	padding-top: 80px;
 }
 
@@ -985,7 +986,7 @@ footer .foot-copy {
 	}
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 991px) {
 	/* MENU */
 	.navbar-header {
 		float: none;
@@ -1011,9 +1012,6 @@ footer .foot-copy {
 		padding-top: 10px;
 		padding-bottom: 10px;
 	}
-}
-
-@media (max-width: 991px) {
 	/* HERO */
 	.container-fluid.hero {
 		height: 560px;
