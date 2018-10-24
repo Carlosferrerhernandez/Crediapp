@@ -60,7 +60,7 @@ a:hover {
 	background-image: url(../../img/hero.jpg);
 	background-position: bottom left;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: auto 615px;
 	padding-top: 80px;
 }
 
