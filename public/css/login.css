@@ -67,6 +67,9 @@ body#login footer {
 }
 
 @media only screen and (max-width: 767px) {
+	body#login {
+		background-image: none;
+	}
 	body#login footer, body#login footer .text-right {
 		text-align: center !important;
 	}

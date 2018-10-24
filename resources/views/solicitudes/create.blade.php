@@ -407,6 +407,17 @@
 	</div>
 </div>
 
+<div class="modal fade" id="enviadoModal" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				<img src="img/enviado-check.png"><br>
+				<h2>¡Tu solicitud de crédito fue enviada exitosamente!</h2>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 <script>
 	$( function() {
