@@ -405,21 +405,21 @@
                             <h2>Contáctanos</h2>
                             <p>¡Es un gusto poder ayudarte!  responderemos tus dudas e inquietudes en el menor tiempo posible.</p>
                             <div class="md-form">
-                                <input type="text" class="form-control" id="homeName" name="nombre_mail">
+                                <input type="text" class="form-control" id="homeName" name="nombre_mail" required="true">
                                 <label for="homeName">Nombre completo</label>
                             </div>
                             <div class="md-form">
-                                <input type="email" class="form-control" id="homeMail" name="dir_email">
+                                <input type="email" class="form-control" id="homeMail" name="dir_email" required="">
                                 <label for="homeMail">Correo electrónico</label>
                             </div>
                             <div class="md-form">
-                                <input type="tel" class="form-control" id="homeCell" name="tel_mail">
+                                <input type="tel" class="form-control" id="homeCell" name="tel_mail" required="true">
                                 <label for="homeCell">Celular</label>
                             </div>
                         </div>
                         <div class="col-md-6 align-self-end">
                             <div class="md-form">
-                                <textarea onkeyup="auto_grow(this)" class="form-control align-self-end" id="homeMsg" name="mensaje_mail" rows="1"></textarea>
+                                <textarea onkeyup="auto_grow(this)" class="form-control align-self-end" id="homeMsg" name="mensaje_mail" rows="1" required=""></textarea>
                                 <label for="homeMsg">Mensaje</label>
                             </div>
                         </div>
@@ -468,7 +468,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <img src="{{ asset('img/enviado-check.png')}}"><br>
-                    <h2>¡Te has suscribido exitosamente!</h2>
+                    <h2>¡Te has suscrito exitosamente!</h2>
                 </div>
             </div>
         </div>
