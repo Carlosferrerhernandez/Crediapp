@@ -77,7 +77,7 @@
 						</div>
 						<div class="card-footer">
 							<button type="submit" class="btn btn-block mb-3 btn-sesion">Ingresar</button>
-							<a href="#{{-- {{ route('password.request') }} --}}" class="btn btn-block mb-3 btn-olvide">Olvidaste tu contraseña</a>
+							<a href="{{ route('password.request') }}" class="btn btn-block mb-3 btn-olvide">Olvidaste tu contraseña</a>
 						</div>
 					</div>
 				</form>

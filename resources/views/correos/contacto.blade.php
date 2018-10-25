@@ -24,7 +24,7 @@
 	<!-- Menú -->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top">
 		<div class="container-fluid">
-			<a class="navbar-brand page-scroll"><img src="#"></a>
+			<a class="navbar-brand page-scroll"></a>
 			<!-- Brand and toggle get grouped for better mobile display -->
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
