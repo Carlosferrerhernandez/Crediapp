@@ -375,7 +375,7 @@
 	<script type="text/javascript">
 		$(document).ready(function()
 		{
-			$("#mostrarmodalsolicitud").modal("show");
+			$("#enviadoModal").modal("show");
 		});
 	</script>
 @endif

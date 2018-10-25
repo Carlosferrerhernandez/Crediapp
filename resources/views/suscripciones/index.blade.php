@@ -19,7 +19,6 @@
 								@foreach($data as $suscripcion)
 								<tr>
 									<td class="text-center">{{$suscripcion->suscMail}}</td>
-                                	<br>
                                 	<td class="td-actions text-center">
                                     	<form action="/suscripciones/{{ $suscripcion->id }}" method="POST">
 								            {{ csrf_field() }}

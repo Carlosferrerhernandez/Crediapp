@@ -22,7 +22,6 @@
 								<tr>
 									<td class="text-center">{{$solicitud->estado_solicitud}}</td>
 									<td class="text-center">{{$solicitud->user->nombres}} {{$solicitud->user->apellidos}}</td>
-									<br>
 									<td class="td-actions text-center">
                                     <a href="{{ URL::to('solicitudes/' . $solicitud->id . '/user/' . $solicitud->user_id) }}" rel="tooltip" title="Ver mas" class="btn btn-success">Ver detalle</a>  
                                 	</td>

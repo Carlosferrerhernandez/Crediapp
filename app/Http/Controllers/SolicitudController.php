@@ -51,6 +51,25 @@ class SolicitudController extends Controller
     public function store(Request $request)
     {   
 
+        $userdoc = User::where("n_documento", "=", $request->n_documento)->select("id")->first();
+ 
+         if ($userdoc) {
+                    
+                 $id_user = $userdoc->id;
+                 $user = User::find($id_user);
+                 $solicitud = $user->solicitudes()->create([
+                'estado_solicitud' => 'Pendiente',
+                'valor_gestion' => $request->valor_gestion,
+                'valor_interes' => $request->valor_interes,
+                'valor_total_pagar' => $request->valor_total_pagar,
+                'valor_seguro' => $request->valor_seguro,
+                'valor_solicitado' => $request->valor_solicitado,
+                'dias_limite' => $request->dias_limite,
+             ]);
+        
+        }
+         else{
+
         /*
         *   Creacion de usuario
         */
@@ -171,6 +190,9 @@ class SolicitudController extends Controller
             'dias_limite' => $request->dias_limite,
 
         ]);
+
+        /*Fin else*/
+        }
 
         return Redirect::to('/')->with('success_solicitud', 5);
     }

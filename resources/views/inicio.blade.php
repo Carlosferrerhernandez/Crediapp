@@ -19,7 +19,7 @@
     <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ asset('img/favicon.ico) }}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon"/>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -441,39 +441,38 @@
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="{{ asset('img/enviado-check.png')}}"><br>
-                    <h2>¡El correo de contacto fue enviado exitosamente!</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="mostrarmodalsolicitud" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="{{ asset('img/enviado-check.png')}}"><br>
-                    <h2>¡Tu solicitud de crédito fue enviada exitosamente!</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
     <div class="modal fade" id="mostrarmodalsuscripcion" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-body">
+                <div class="text-center">
                     <img src="{{ asset('img/enviado-check.png')}}"><br>
-                    <h2>¡Te has suscrito exitosamente!</h2>
+                </div>
+                <h2>¡El correo de contacto fue enviado exitosamente!</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalcorreo" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center">
+                        <img src="{{ asset('img/enviado-check.png')}}"><br>
+                    </div>
+                    <h3>¡El correo de contacto fue enviado exitosamente!</h3>
                 </div>
             </div>
         </div>
     </div>
+
+<div class="modal fade" id="solicitudmodal" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div>
+            <img src="{{asset('img/Popup.png')}}"><br>
+        </div>
+    </div>
+</div>
 
     <footer>
         <div class="container-fluid">
@@ -517,20 +516,20 @@
         </div>
     </footer>
 
-    @if(!empty(Session::get('success_contacto')) && Session::get('success_contacto') == 5)
-        <script type="text/javascript">
-            $(document).ready(function()
-                {
-                    $("#mostrarmodal").modal("show");
-                });
-        </script>
-    @endif
-
     @if(!empty(Session::get('success_solicitud')) && Session::get('success_solicitud') == 5)
         <script type="text/javascript">
             $(document).ready(function()
                 {
-                    $("#mostrarmodalsolicitud").modal("show");
+                    $("#solicitudmodal").modal("show");
+                });
+        </script>
+    @endif
+
+    @if(!empty(Session::get('success_contacto')) && Session::get('success_contacto') == 5)
+        <script type="text/javascript">
+            $(document).ready(function()
+                {
+                    $("#modalcorreo").modal("show");
                 });
         </script>
     @endif
