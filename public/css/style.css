@@ -7,6 +7,11 @@ a:hover {
 	text-decoration: none;
 }
 
+a:focus, button:focus {
+	outline: none !important;
+}
+
+
 .container-fluid, .navbar-expand-lg>.container-fluid {
 	padding-left: 50px;
 	padding-right: 50px;
