@@ -140,7 +140,6 @@
     </div>
 
     <div class="row">
-        <input type="hidden" id="valor_interes" >
         <input type="hidden" id="valor_interes" name="valor_interes" value="">
         <input type="hidden" id="valor_total_pagar" name="valor_total_pagar" value="">
         <input type="hidden" id="valor_seguro" name="valor_seguro" value="">
@@ -459,7 +458,7 @@
                 <div class="text-center">
                     <img src="{{ asset('img/alert.png')}}"><br>
                 </div>
-                <h2>¡Te recordamos que debes seleccionar la cantidad de tu prestamos y los dias!</h2>
+                <h2>¡Te recordamos que debes seleccionar la cantidad de tu prestamo y los dias!</h2>
             </div>
         </div>
     </div>
@@ -568,6 +567,17 @@
         <script>
             function validarSoloJs(){
                 valor = document.getElementById("valor_interes").value;
+                if( valor != "" ) {
+                  window.location.href = "{{ route('solicitudes.create')}}";
+                }else{
+                  $("#llenarcampos").modal("show");
+                }
+            }
+        </script>
+        
+        <script>
+            function validarSoloJs(){
+                valor = document.getElementById("dias_limite").value;
                 if( valor != "" ) {
                   window.location.href = "{{ route('solicitudes.create')}}";
                 }else{
