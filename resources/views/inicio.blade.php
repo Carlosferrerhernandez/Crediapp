@@ -31,7 +31,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<![endif]-->
 </head>
 <body>
     <!-- Menú -->
@@ -70,7 +70,7 @@
                     <div class="wrapper">
                         <form class="calculator">
                             <div id="valores">
-                                
+
                             </div>
                             <table>
                                 <tr>
@@ -131,12 +131,23 @@
                             </table>
                         </form>
                     </div>
-                    <a href="{{ route('solicitudes.create')}}">
-                    <button>Solicitar</button>
+                    <a href="#" onclick="validarSoloJs();">
+                        <button >Solicitar</button>
                     </a>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="row">
+        <input type="hidden" id="valor_interes" >
+        <input type="hidden" id="valor_interes" name="valor_interes" value="">
+        <input type="hidden" id="valor_total_pagar" name="valor_total_pagar" value="">
+        <input type="hidden" id="valor_seguro" name="valor_seguro" value="">
+        <input type="hidden" id="valor_solicitado" name="valor_solicitado" value="">
+        <input type="hidden" id="valor_gestion" name="valor_gestion" value="">
+            
+        <input type="hidden" id="dias_limite" name="dias_limite" value="">
     </div>
 
     <!-- REQUISITOS -->
@@ -235,7 +246,7 @@
                         </td>
                         <td>
                             <h4>Calcula tu crédito y diligencia el formulario</h4>
-                            <p>Define el valor a solicitar, determina la fecha de pago y haz click en solicitar. Ingresa todos los datos solicitados, revisa que la información suministrada sea correcta.</p>
+                            <p>Define el valor a solicitar, determina la fecha de pago y has click en solicitar. Ingresa todos los datos solicitados, revisa que la información suministrada sea correcta.</p>
                         </td>
                     </tr>
                     <tr>
@@ -400,7 +411,7 @@
         <div class="row">
             <div class="col-lg-9">
                 <form id="homeForm" method="POST" action="{{ route('mail.store') }}" id="suscribir">
-                        {{ csrf_field() }}
+                    {{ csrf_field() }}
                     <div class="row">
                         <div class="col-md-6">
                             <h2>Contáctanos</h2>
@@ -442,13 +453,24 @@
         </div>
     </div>
     
+    <div class="modal fade" id="llenarcampos" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="text-center">
+                    <img src="{{ asset('img/alert.png')}}"><br>
+                </div>
+                <h2>¡Te recordamos que debes seleccionar la cantidad de tu prestamos y los dias!</h2>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="mostrarmodalsuscripcion" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="text-center">
                     <img src="{{ asset('img/enviado-check.png')}}"><br>
                 </div>
-                <h2>¡Te haz suscrito correctamente!</h2>
+                <h2>¡Te has suscrito correctamente!</h2>
             </div>
         </div>
     </div>
@@ -466,13 +488,13 @@
         </div>
     </div>
 
-<div class="modal fade" id="solicitudmodal" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div>
-            <img src="{{asset('img/Popup.png')}}"><br>
+    <div class="modal fade" id="solicitudmodal" tabindex="-1" role="dialog" aria-labelledby="enviadoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div>
+                <img src="{{asset('img/Popup.png')}}"><br>
+            </div>
         </div>
     </div>
-</div>
 
     <footer>
         <div class="container-fluid">
@@ -497,9 +519,9 @@
                         {{ csrf_field() }}
                         <input type="email" placeholder="Correo electrónico" id="suscMail" name="suscMail" value="{{ $errors->has('suscMail') ? ' is-invalid' : '' }}">
                         @if ($errors->has('suscMail'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('suscMail') }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('suscMail') }}</strong>
+                        </span>
                         @endif
                         <button type="submit" class="btn">Suscribir</button>
                     </form>
@@ -511,47 +533,59 @@
                 </div>
                 <div class="col-md-6 text-right">
                     Powered by <a href="http://graphitech.com.co/es/" target="_blank"><img src="{{ asset('img/graphitech.png') }}">
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    @if(!empty(Session::get('success_solicitud')) && Session::get('success_solicitud') == 5)
+        @if(!empty(Session::get('success_solicitud')) && Session::get('success_solicitud') == 5)
         <script type="text/javascript">
             $(document).ready(function()
-                {
-                    $("#solicitudmodal").modal("show");
-                });
+            {
+                $("#solicitudmodal").modal("show");
+            });
         </script>
-    @endif
+        @endif
 
-    @if(!empty(Session::get('success_contacto')) && Session::get('success_contacto') == 5)
+        @if(!empty(Session::get('success_contacto')) && Session::get('success_contacto') == 5)
         <script type="text/javascript">
             $(document).ready(function()
-                {
-                    $("#modalcorreo").modal("show");
-                });
+            {
+                $("#modalcorreo").modal("show");
+            });
         </script>
-    @endif
-    
-    @if(!empty(Session::get('success_suscripcion')) && Session::get('success_suscripcion') == 5)
+        @endif
+
+        @if(!empty(Session::get('success_suscripcion')) && Session::get('success_suscripcion') == 5)
         <script type="text/javascript">
             $(document).ready(function()
-                {
-                    $("#mostrarmodalsuscripcion").modal("show");
-                });
+            {
+                $("#mostrarmodalsuscripcion").modal("show");
+            });
         </script>
-    @endif
+        @endif
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
-    <script src="{{ asset('js/jquery.easing.min.js') }}"></script>
-    <script src="{{ asset('js/scrolling-nav.js') }}"></script>
-    <script src="{{ asset('js/mdb.min.js') }}"></script>
-</body>
-</html>
+        <script>
+            function validarSoloJs(){
+                valor = document.getElementById("valor_interes").value;
+                if( valor != "" ) {
+                  window.location.href = "{{ route('solicitudes.create')}}";
+                }else{
+                  $("#llenarcampos").modal("show");
+                }
+            }
+        </script>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/inivalues.js') }}"></script>
+        <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('js/custom.js') }}"></script>
+        <script src="{{ asset('js/jquery.easing.min.js') }}"></script>
+        <script src="{{ asset('js/scrolling-nav.js') }}"></script>
+        <script src="{{ asset('js/mdb.min.js') }}"></script>
+    </body>
+    </html>

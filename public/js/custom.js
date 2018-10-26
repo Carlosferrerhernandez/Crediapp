@@ -15,7 +15,6 @@ gestion();
     var calculatorDias = calculator.find('.calculator__dias');
     var calculatorDinero = calculator.find('.calculator__dinero');
 
-
     var calculatorResult = calculator.find('.calculator__result');
     var dineroAmount = calculator.find('.dinero-amount');
     var diasAmount = calculator.find('.dias-amount');
@@ -33,7 +32,7 @@ gestion();
             url:'/search',
             method:'GET',
             success: function(respuesta){
-                /*console.log(respuesta);*/
+                console.log(respuesta);
                 $('#valores').html(
                     `<input type="hidden" id="id_Interes" value="${respuesta[0]['interes']}">
                     <input type="hidden" id="id_Gestion" value="${respuesta[0]['gestion_credito']}">
@@ -127,9 +126,7 @@ gestion();
          
     });
 
-    calculatorDias.on('change', function () {
-
-        
+    calculatorDias.on('change', function () {  
 
         if ( calculatorDinero.val() === '' || isNaN( calculatorDinero.val() ) ) {
             alert('Enter bill amount, please!')

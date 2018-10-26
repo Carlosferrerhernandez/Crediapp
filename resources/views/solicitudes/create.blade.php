@@ -34,12 +34,13 @@
 			<div class="col-md-4">
 				<div class="md-form">
 					<input type="text" class="form-control" id="lugar_expedicion" name="lugar_expedicion" required="">
-					<label for="lugar_expedicion">Lugar y Fecha de Expedición<span>*</span></label>
+					<label for="lugar_expedicion">Lugar de expedición<span>*</span></label>
+					
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="md-form">
-					<input class="datepicker form-control" type="date" name="fecha_expedicion" placeholder="Fecha de expedicion" required="">
+					<input class="datepicker form-control" type="text" name="fecha_expedicion" required="" placeholder="Fecha de Nacimiento *">
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -116,12 +117,12 @@
 				<div class="col-md-4">
 					<div class="md-form">
 						<input type="text" class="form-control" id="lugar_conyuge" name="lugar_conyuge">
-						<label for="lugar_conyuge">Lugar y Fecha de Nacimiento<span>*</span></label>
+						<label for="lugar_conyuge">Lugar de Nacimiento<span>*</span></label>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="md-form">
-						<input class="datepicker form-control" type="date" name="nacimiento_conyuge" placeholder="Fecha nacimiento">
+						<input class="datepicker form-control" type="text" name="nacimiento_conyuge" placeholder="Fecha de Nacimiento *">
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -132,7 +133,7 @@
 				</div>
 			</div>
 		</div>
-		<h4>Ubicación</h4>
+		<h4>Ubicación del solicitante</h4>
 		<div class="row">
 			<div class="col-md-4">
 				<div class="md-form">

@@ -808,6 +808,27 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 /* MODALES */
+
+#mostrarmodalsuscripcion h2 {
+	text-align: center;margin-top:20px;font-size:24px
+}
+
+#llenarcampos h2 {
+	text-align: center;margin-top:20px;font-size:24px
+}
+
+#modalcorreo h3 {
+	text-align: center;margin-top:20px;font-size:32px
+}
+
+#solicitudmodal {
+	padding-left:20px; padding-right: 20px;
+}
+
+#solicitudmodal img {
+	width: 100%; max-width: 772px; height: auto
+}
+
 .modal-dialog {
 	max-width: 750px;
 }

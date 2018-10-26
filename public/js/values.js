@@ -1,21 +1,33 @@
 
-	/*$( function() {
+	$( function() {
 
 		$(".datepicker").datepicker({
 			changeMonth: true,
 			changeYear: true,
                 dateFormat: 'yy-mm-dd', //Se especifica como deseamos representarla
                 firstDay: 1
+
             });
 
-	});*/
+		$.datepicker.regional['es'] = {clearText: 'Limpiar', clearStatus: '',
+		   closeText: 'Cerrar', closeStatus: 'Cerrar sin modificar',
+		   prevText: '< Ant', prevStatus: 'Ir al mes anterior',
+		   nextText: 'Sig >', nextStatus: 'Ir al mes siguiente',
+		   currentText: 'Actual', currentStatus: 'Ir al mes actual',
+		   monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+		   monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+		   monthStatus: 'Ir a otro mes', yearStatus: 'Ir a otro año',
+		   weekHeader: 'Sm', weekStatus: '',
+		   dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+		   dayNamesShort: ['Dom','Lun','Mar','Mie','Juv','Vie','Sab'],
+		   dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sa'],
+		   dateFormat: 'yy-mm-dd', firstDay: 0,
+		   initStatus: 'Escoger fecha', isRTL: false};
+		$.datepicker.setDefaults($.datepicker.regional['es']);
 
-
+	});
 
 $(document).ready(function(){
-
-	var dateControl = document.querySelector('input[type="date"]');
-	dateControl.value = '';
 
 	var valores = JSON.parse(localStorage.getItem("valores"));
 
