@@ -39,7 +39,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="md-form">
-					<input class="datepicker form-control" type="text" name="fecha_expedicion" placeholder="Fecha de expedicion" required="">
+					<input class="datepicker form-control" type="date" name="fecha_expedicion" placeholder="Fecha de expedicion" required="">
 				</div>
 			</div>
 			<div class="col-md-4">
@@ -121,12 +121,12 @@
 				</div>
 				<div class="col-md-4">
 					<div class="md-form">
-						<input class="datepicker form-control" type="text" name="nacimiento_conyuge" placeholder="Fecha nacimiento">
+						<input class="datepicker form-control" type="date" name="nacimiento_conyuge" placeholder="Fecha nacimiento">
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="md-form">
-						<input type="tel" class="form-control" id="telefono_conyuge" name="telefono_conyuge">
+						<input type="number" class="form-control" id="telefono_conyuge" name="telefono_conyuge">
 						<label for="telefono_conyuge">Teléfono</label>
 					</div>
 				</div>
@@ -238,7 +238,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="md-form">
-					<input type="tel" class="form-control" id="telefono_empresa" name="telefono_empresa">
+					<input type="number" class="form-control" id="telefono_empresa" name="telefono_empresa">
 					<label for="telefono_empresa">Teléfono de contacto<span>*</span></label>
 				</div>
 			</div>
@@ -300,7 +300,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="md-form">
-					<input type="tel" class="form-control" id="telefono_referencia" name="telefono_referencia" required="">
+					<input type="number" class="form-control" id="telefono_referencia" name="telefono_referencia" required="">
 					<label for="telefono_referencia">Teléfono<span>*</span></label>
 				</div>
 			</div>
@@ -407,38 +407,6 @@
 	</div>
 </div>
 
-<script>
-	$( function() {
-
-		$(".datepicker").datepicker({
-			changeMonth: true,
-			changeYear: true,
-                dateFormat: 'yy-mm-dd', //Se especifica como deseamos representarla
-                firstDay: 1
-            });
-
-	});
-</script>
-
-<script>
-	$(document).ready(function(){
-
-		var valores = JSON.parse(localStorage.getItem("valores"));
-
-		var dias = JSON.parse(localStorage.getItem("dias"));
-
-		/*console.log(valores);
-		console.log(dias);*/
-		
-		document.getElementById("valor_interes").setAttribute('value', valores.interes);
-		document.getElementById("valor_total_pagar").setAttribute('value', valores.result);
-		document.getElementById("valor_seguro").setAttribute('value', valores.seguro);
-		document.getElementById("valor_solicitado").setAttribute('value', valores.valor);
-		document.getElementById("valor_gestion").setAttribute('value', valores.gestion);
-
-		document.getElementById("dias_limite").setAttribute('value', dias.dias)	;
-
-	});
-</script>
+<script src="{{ asset('js/values.js') }}"></script>
 
 @endsection
