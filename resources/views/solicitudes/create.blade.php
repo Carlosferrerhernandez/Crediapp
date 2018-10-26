@@ -310,7 +310,7 @@
 			<div class="col-md-4">
 				<div class="md-form">
 					<select class="form-control" id="nombre_banco" name="nombre_banco[]">
-						<option selected="" disabled="true">Banco</option>
+						<option selected="" disabled="true">Seleccionar Banco</option>
 						<option value="BANCO DE BOGOTA">BANCO DE BOGOTA</option>
 						<option value="BANCO POPULAR">BANCO POPULAR</option>
 						<option value="BANCO ITAU CORPBANCA COLOMBIA">BANCO ITAU CORPBANCA COLOMBIA</option>

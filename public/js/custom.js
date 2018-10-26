@@ -247,6 +247,18 @@ $(".radioSelect2").click(function(){
    showSpecificFields2(this);
 });
 
+var ultimo = null;
+
+function marcar(elemento) {
+  ultimo = elemento;
+}
+
+function limpiar() {
+  if (ultimo != null) {
+    ultimo.value = "";
+  }
+}
+
 
 function showSpecificFields2(obj){
     if($(obj).is(":checked")){

@@ -51,6 +51,8 @@ class SolicitudController extends Controller
     public function store(Request $request)
     {   
 
+        /*dd($request);*/
+
         $userdoc = User::where("n_documento", "=", $request->n_documento)->select("id")->first();
  
          if ($userdoc) {

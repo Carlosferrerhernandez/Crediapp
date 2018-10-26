@@ -448,7 +448,7 @@
                 <div class="text-center">
                     <img src="{{ asset('img/enviado-check.png')}}"><br>
                 </div>
-                <h2>¡El correo de contacto fue enviado exitosamente!</h2>
+                <h2>¡Te haz suscrito correctamente!</h2>
             </div>
         </div>
     </div>
@@ -460,7 +460,7 @@
                     <div class="text-center">
                         <img src="{{ asset('img/enviado-check.png')}}"><br>
                     </div>
-                    <h3>¡El correo de contacto fue enviado exitosamente!</h3>
+                    <h3>¡Tu mensaje de contacto fue enviado exitosamente!</h3>
                 </div>
             </div>
         </div>
