@@ -51,7 +51,7 @@
 @component('mail::subcopy')
 @lang(
     "Si tiene problemas para hacer clic en el botón \":actionText\" copie y pegue la URL debajo\n".
-    'en su navegador web: [:actionURL](:actionURL)',
+    'en su navegador web: [:actionURL](:actionURL)' . " Powered by Graphitech.com.co",
     [
         'actionText' => $actionText,
         'actionUrl' => $actionUrl

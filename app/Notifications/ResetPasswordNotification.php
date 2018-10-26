@@ -61,7 +61,7 @@ class ResetPasswordNotification extends Notification
         return (new MailMessage)
 
             ->subject('Solicitud de restablecimiento de contraseña')
-            ->greeting('Hola ' . $notifiable->nombres, $notifiable->apellidos)
+            ->greeting('Hola ' . $notifiable->nombres . ' ' . $notifiable->apellidos)
             ->subject(Lang::getFromJson('Solicitud de restablecimiento de contraseña'))
             ->line(Lang::getFromJson('Está recibiendo este correo electrónico porque recibimos una solicitud de restablecimiento de contraseña para su cuenta.'))
             ->action(Lang::getFromJson('Restablecer contraseña'), url(config('app.url').route('password.reset', $this->token, false)))

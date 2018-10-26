@@ -414,7 +414,7 @@
                                 <label for="homeMail">Correo electrónico</label>
                             </div>
                             <div class="md-form">
-                                <input type="tel" class="form-control" id="homeCell" name="tel_mail" required="true">
+                                <input type="number" class="form-control" id="homeCell" name="tel_mail" required="true">
                                 <label for="homeCell">Celular</label>
                             </div>
                         </div>
