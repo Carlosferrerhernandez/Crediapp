@@ -16,7 +16,7 @@ class MailController extends Controller
      */
     public function index()
     {
-        //
+        return abort(404);
     }
 
     /**
@@ -26,7 +26,7 @@ class MailController extends Controller
      */
     public function create()
     {
-        //
+        return abort(404);
     }
 
     /**
@@ -57,6 +57,7 @@ class MailController extends Controller
     public function show($id)
     {
         //
+        return abort(404);
     }
 
     /**
@@ -68,6 +69,7 @@ class MailController extends Controller
     public function edit($id)
     {
         //
+        return abort(404);
     }
 
     /**
@@ -80,6 +82,7 @@ class MailController extends Controller
     public function update(Request $request, $id)
     {
         //
+        return abort(404);
     }
 
     /**
@@ -91,5 +94,6 @@ class MailController extends Controller
     public function destroy($id)
     {
         //
+        return abort(404);
     }
 }

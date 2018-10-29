@@ -247,7 +247,7 @@ class SolicitudController extends Controller
      */
     public function edit($id)
     {
-        //
+        return abort(404);
     }
 
     /**
