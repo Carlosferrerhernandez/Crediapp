@@ -13,6 +13,6 @@ $(document).change(function(){
 		document.getElementById("valor_solicitado").setAttribute('value', valores.valor);
 		document.getElementById("valor_gestion").setAttribute('value', valores.gestion);
 
-		document.getElementById("dias_limite").setAttribute('value', dias.dias)	;
+		document.getElementById("dias_limite").setAttribute('value', dias.dias);
 
 });
