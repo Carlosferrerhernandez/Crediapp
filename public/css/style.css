@@ -1041,12 +1041,9 @@ footer .foot-copy {
 /* RESPONSIVE */
 @media (min-width: 1650px) {
 	/* HERO */
-.solicitar {
-	float: none;
-	margin-left: auto;
-	margin-right: auto;
-}
-
+	.solicitar {
+		margin-right: 100px;
+	}
 }
 
 @media (min-width: 1500px) {
@@ -1056,6 +1053,13 @@ footer .foot-copy {
 		background-image: url(../../img/hero-big.jpg);
 		background-size: auto 1080px;
 		background-position: bottom left;
+	}
+	.container-fluid.hero p {
+		padding-top: 200px;
+		margin-left: 200px;
+	}
+	.solicitar {
+		margin-top: 200px;
 	}
 }
 
