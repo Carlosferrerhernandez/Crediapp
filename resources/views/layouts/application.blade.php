@@ -96,7 +96,7 @@
                     Suscríbete a nuestro newsletter
                     <form  role="form" method="POST" action="{{ route('suscripciones.store') }}" id="suscribir">
                         {{ csrf_field() }}
-                        <input type="email" placeholder="Correo electrónico" id="suscMail" name="suscMail" value="{{ $errors->has('suscMail') ? ' is-invalid' : '' }}">
+                        <input type="email" placeholder="Correo electrónico" id="suscMail" name="suscMail" value="{{ $errors->has('suscMail') ? ' is-invalid' : '' }}" required="">
                         @if ($errors->has('suscMail'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('suscMail') }}</strong>
