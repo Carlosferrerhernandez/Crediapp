@@ -75,12 +75,12 @@
                             <table>
                                 <tr>
                                     <td>¿Cuánto dinero necesitas?</td>
-                                    <td class="variable var-dinero"><span class="dinero-amount">$300.000</span></td>
+                                    <td class="variable var-dinero"><span class="dinero-amount">$200.000</span></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                         <div class="slidecontainer">
-                                            <input type="range" id="demo-dinero" min="110000" max="750000" value="300000" step="10000" class="calculator__dinero slider" required/>
+                                            <input type="range" id="demo-dinero" min="110000" max="750000" value="200000" step="10000" class="calculator__dinero slider" required/>
                                         </div>
                                     </td>
                                 </tr>
@@ -92,12 +92,12 @@
                             <table>
                                 <tr>
                                     <td>¿Cuándo puedes pagarnos?</td>
-                                    <td class="variable var-dias"><span class="dias-amount">20</span> días</td>
+                                    <td class="variable var-dias"><span class="dias-amount">15</span> días</td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                         <div class="slidecontainer">
-                                            <input type="range" id="demo-dias" min="5" max="30" value="20" step="1" class="calculator__dias slider" required/>
+                                            <input type="range" id="demo-dias" min="5" max="30" value="15" step="1" class="calculator__dias slider" required/>
                                         </div>
                                     </td>
                                 </tr>
@@ -110,23 +110,23 @@
                             <table class="valores">
                                 <tr>
                                     <td>Valor solicitado</td>
-                                    <td><span class="dinero-amount">$300.000</span></td>
+                                    <td><span class="dinero-amount">$200.000</span></td>
                                 </tr>
                                 <tr>
                                     <td>Gestión de crédito</td>
-                                    <td><span class="gestion-amount">$24.000</span></td>
+                                    <td><span class="gestion-amount"></span></td>
                                 </tr>
                                 <tr>
                                     <td>Seguro</td>
-                                    <td><span class="seguro-amount">$9.000</span></td>
+                                    <td><span class="seguro-amount"></span></td>
                                 </tr>
                                 <tr>
                                     <td>Interés</td>
-                                    <td><span class="interes-amount">$4.000</span></td>
+                                    <td><span class="interes-amount"></span></td>
                                 </tr>
                                 <tr class="total">
                                     <td>Total a Pagar</td>
-                                    <td><span class="calculator__result">$337.000</span></td>
+                                    <td><span class="calculator__result"></span></td>
                                 </tr>
                             </table>
                         </form>
