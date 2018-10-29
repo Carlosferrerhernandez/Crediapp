@@ -213,7 +213,11 @@ class SolicitudController extends Controller
         /*
         *   Validacion consulta usuario indeseado
         */  
-        /*$conyuges = Conyuge::findOrFail($usuario);*/
+        
+
+        $solicitud = Solicitud::findOrFail($id);
+
+        $usuario = User::findOrFail($usuario);
 
         /*
         *   Datos relacionados del usuario
