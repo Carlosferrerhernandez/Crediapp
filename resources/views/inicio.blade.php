@@ -110,7 +110,7 @@
                             <table class="valores">
                                 <tr>
                                     <td>Valor solicitado</td>
-                                    <td><span class="dinero-amount">$200.000</span></td>
+                                    <td><span class="dinero-amount"></span></td>
                                 </tr>
                                 <tr>
                                     <td>Gestión de crédito</td>
