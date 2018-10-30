@@ -1049,17 +1049,17 @@ footer .foot-copy {
 @media (min-width: 1500px) {
 	/* HERO */
 	.container-fluid.hero {
-		height: 1080px;
+		height: 950px;
 		background-image: url(../../img/hero-big.jpg);
 		background-size: auto 1080px;
 		background-position: bottom left;
 	}
 	.container-fluid.hero p {
-		padding-top: 200px;
+		padding-top: 70px;
 		margin-left: 200px;
 	}
 	.solicitar {
-		margin-top: 200px;
+		margin-top: 70px;
 	}
 }
 
