@@ -279,7 +279,6 @@
 	</div>
 	@endforeach
 
-	{{-- @foreach($solicitudes as $solicitud) --}}
 	<div class="row submit-row">
 		<div class="col-md-4">
 			<div class="md-form">

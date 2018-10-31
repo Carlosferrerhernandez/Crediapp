@@ -217,7 +217,7 @@ class SolicitudController extends Controller
 
         $solicitud = Solicitud::findOrFail($id);
 
-        $usuario = User::findOrFail($usuario);
+        /*$usuario = User::findOrFail($usuario);*/
 
         /*
         *   Datos relacionados del usuario

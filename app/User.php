@@ -83,7 +83,7 @@ class User extends Authenticatable
     }
 
     /**
-     * obtener las solicitudes de un usuario.
+     * obtener las conyugues de un usuario.
      */
     public function conyuges()
     {
