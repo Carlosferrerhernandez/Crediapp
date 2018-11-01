@@ -9,6 +9,7 @@ use App\Conyuge;
 use App\Ubicacion;
 use App\Actividad;
 use Hash;
+use Mail;
 use Redirect;
 
 class SolicitudController extends Controller
@@ -68,6 +69,15 @@ class SolicitudController extends Controller
                 'valor_solicitado' => $request->valor_solicitado,
                 'dias_limite' => $request->dias_limite,
              ]);
+
+            /*Correo electronico*/
+
+            Mail::send('correos.contacto', $request->all(), function($mensaje){
+
+            $mensaje->subject('Correo de contacto - Crediapp');
+            $mensaje->to('solicitudes@crediapp.co');
+
+        });
         
         }
          else{
@@ -192,6 +202,15 @@ class SolicitudController extends Controller
             'dias_limite' => $request->dias_limite,
 
         ]);
+
+        /*Correo electronico*/
+
+            Mail::send('correos.contacto', $request->all(), function($mensaje){
+
+            $mensaje->subject('Correo de contacto - Crediapp');
+            $mensaje->to('solicitudes@crediapp.co');
+
+        });
 
         /*Fin else*/
         }
