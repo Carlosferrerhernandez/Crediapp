@@ -72,12 +72,12 @@ class SolicitudController extends Controller
 
             /*Correo electronico*/
 
-            Mail::send('correos.contacto', $request->all(), function($mensaje){
+            Mail::send('correos.solicitud', $request->all(), function($mensaje){
 
             $mensaje->subject('Correo de contacto - Crediapp');
             $mensaje->to('solicitudes@crediapp.co');
 
-        });
+            });
         
         }
          else{
@@ -205,10 +205,10 @@ class SolicitudController extends Controller
 
         /*Correo electronico*/
 
-            Mail::send('correos.contacto', $request->all(), function($mensaje){
+        Mail::send('correos.solicitud', $request->all(), function($mensaje){
 
-            $mensaje->subject('Correo de contacto - Crediapp');
-            $mensaje->to('solicitudes@crediapp.co');
+        $mensaje->subject('Correo de solicitud - Crediapp');
+        $mensaje->to('solicitudes@crediapp.co');
 
         });
 

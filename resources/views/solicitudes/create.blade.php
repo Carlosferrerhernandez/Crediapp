@@ -53,7 +53,7 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="md-form">
-					<input type="number" class="form-control" id="celular" name="n_celular">
+					<input type="number" class="form-control" id="n_celular" name="n_celular">
 					<label for="celular">Celular<span>*</span></label>
 				</div>
 			</div>
@@ -378,6 +378,13 @@
 				<button type="submit" class="btn-enviar">Enviar solicitud</button>
 			</div>
 		</div>
+		<div class="col-md-4" style="display: none">
+			<div class="md-form">
+				<input type="text" class="form-control" id="nombre_mail" name="nombre_mail">
+				<input type="text" class="form-control" id="dir_email" name="dir_email">
+				<input type="number" class="form-control" id="tel_mail" name="tel_mail">
+			</div>
+		</div>
 	</form>
 </div>
 
@@ -409,5 +416,22 @@
 </div>
 
 <script src="{{ asset('js/values.js') }}"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#nombres").keyup(function () {
+			var value = $(this).val();
+			$("#nombre_mail").val(value);
+		});
+		$("#email").keyup(function () {
+			var value = $(this).val();
+			$("#dir_email").val(value);
+		});
+		$("#n_celular").keyup(function () {
+			var value = $(this).val();
+			$("#tel_mail").val(value);
+		});
+	});
+</script>
 
 @endsection
