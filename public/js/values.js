@@ -5,7 +5,8 @@
 			changeMonth: true,
 			changeYear: true,
                 dateFormat: 'yy-mm-dd', //Se especifica como deseamos representarla
-                firstDay: 1
+                firstDay: 1,
+                yearRange: '1930:2025'
 
             });
 

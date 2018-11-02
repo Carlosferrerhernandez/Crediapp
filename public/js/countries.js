@@ -45,7 +45,7 @@ function populateStates( countryElementId, stateElementId ){
 	var stateElement = document.getElementById( stateElementId );
 	
 	stateElement.length=0;	// Fixed by Julian Woods
-	stateElement.options[0] = new Option('Cuidad*','');
+	stateElement.options[0] = new Option('Ciudad*','');
 	stateElement.selectedIndex = 0;
 	
 	var state_arr = s_a[selectedCountryIndex].split("|");

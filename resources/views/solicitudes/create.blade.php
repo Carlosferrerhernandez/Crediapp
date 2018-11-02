@@ -419,6 +419,7 @@
 
 <script src="{{ asset('js/values.js') }}"></script>
 <script src="{{ asset('js/countries.js')}}"></script>
+<script src="{{ asset('js/cuidades.js')}}"></script>
 
 <script type="text/javascript">
 	$(document).ready(function () {
