@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- FORMULARIO SOLICITUD -->
-<div class="container-fluid" id="solicitud">
+<div class="container-fluid" id="solicitud" style="margin-top: 130px;">
 	<h3>Solicitar crédito</h3>
 	<p class="d-none d-sm-block">Ingresa todos los datos solicitados, revisa que la información suministrada sea correcta.</p>
 
