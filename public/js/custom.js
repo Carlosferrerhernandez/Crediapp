@@ -127,7 +127,7 @@ $(document).ready( function () {
         } else {
             // LocalStorage no soportado en este navegador
         }
-        
+
     });
 
     calculatorDias.on('change', function () {  
@@ -164,7 +164,7 @@ $(document).ready( function () {
         } else {
             // LocalStorage no soportado en este navegador
         }
-        
+
     });
 
 });
@@ -278,6 +278,10 @@ function showSpecificFields2(obj){
         $(".fieldsSpecific2").each(function(){
            if($(this).attr('id') == radioVal){
                $(this).show();
+
+               $('#actividad_independiente').val('');
+               $('#direccion_independiente').val('');
+               $('#ciudad_independiente').val('');
            } else{
                $(this).hide();
                $('#empresa').removeAttr('required');
