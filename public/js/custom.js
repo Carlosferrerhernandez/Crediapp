@@ -1,6 +1,10 @@
 $(document).ready( function () {
-    
-gestion();
+    $('#empresa').prop('required', 'required');
+    $('#cargo').prop('required', 'required');
+    $('#telefono_empresa').prop('required', 'required');
+    $('#direcccion_trabajo').prop('required', 'required');
+    $('#ciudad_empresa').prop('required', 'required');
+    gestion();
 
     // VARIABLES
     // ----------------------------------------------------------
@@ -37,7 +41,7 @@ gestion();
                     `<input type="hidden" id="id_Interes" value="${respuesta[0]['interes']}">
                     <input type="hidden" id="id_Gestion" value="${respuesta[0]['gestion_credito']}">
                     <input type="hidden" id="id_Seguro" value="${respuesta[0]['seguro_bancario']}">
-                `);
+                    `);
             }
         });
 
@@ -123,7 +127,7 @@ gestion();
         } else {
             // LocalStorage no soportado en este navegador
         }
-         
+        
     });
 
     calculatorDias.on('change', function () {  
@@ -160,7 +164,7 @@ gestion();
         } else {
             // LocalStorage no soportado en este navegador
         }
-         
+        
     });
 
 });
@@ -219,7 +223,7 @@ $(".radioSelect").each(function(){
 });
 
 $(".radioSelect").click(function(){
-   showSpecificFields(this);
+ showSpecificFields(this);
 });
 
 
@@ -227,12 +231,35 @@ function showSpecificFields(obj){
     if($(obj).is(":checked")){
         var radioVal = $(obj).val();
         $(".fieldsSpecific").each(function(){
-         if($(this).attr('id') == radioVal){
-             $(this).show();
-         } else{
-             $(this).hide();                 
-         }
-     });   
+           if($(this).attr('id') == radioVal){
+               $(this).show();
+               $('#nombres_conyuge').prop('required', 'required');
+               $('#apellido_conyuge').prop('required', 'required');
+               $('#documento_conyuge').prop('required', 'required');
+               $('#lugar_conyuge').prop('required', 'required');
+               $('#nacimiento_conyuge').prop('required', 'required');
+               $('#telefono_conyuge').prop('required', 'required');
+           } else{
+               $(this).hide();
+               $('#nombres_conyuge').removeAttr('required');
+               $('#nombres_conyuge').val('');
+
+               $('#apellido_conyuge').removeAttr('required');
+               $('#apellido_conyuge').val('');
+
+               $('#documento_conyuge').removeAttr('required');
+               $('#documento_conyuge').val('');
+
+               $('#lugar_conyuge').removeAttr('required');
+               $('#lugar_conyuge').val('');
+
+               $('#nacimiento_conyuge').removeAttr('required');
+               $('#nacimiento_conyuge').val('');
+
+               $('#telefono_conyuge').removeAttr('required');                
+               $('#telefono_conyuge').val('');                
+           }
+       });   
     }
 }
 
@@ -241,30 +268,38 @@ $(".radioSelect2").each(function(){
 });
 
 $(".radioSelect2").click(function(){
-   showSpecificFields2(this);
+ showSpecificFields2(this);
 });
-
-var ultimo = null;
-
-function marcar(elemento) {
-  ultimo = elemento;
-}
-
-function limpiar() {
-  if (ultimo != null) {
-    ultimo.value = "";
-  }
-}
 
 
 function showSpecificFields2(obj){
     if($(obj).is(":checked")){
         var radioVal = $(obj).val();
         $(".fieldsSpecific2").each(function(){
-         if($(this).attr('id') == radioVal){
-             $(this).show();
-         } else{
-             $(this).hide();                 
+           if($(this).attr('id') == radioVal){
+               $(this).show();
+           } else{
+               $(this).hide();
+               $('#empresa').removeAttr('required');
+               $('#empresa').val('');
+
+               $('#cargo').removeAttr('required');
+               $('#cargo').val('');
+
+               $('#telefono_empresa').removeAttr('required');
+               $('#telefono_empresa').val('');
+
+               $('#direcccion_trabajo').removeAttr('required');
+               $('#direcccion_trabajo').val('');
+
+               $('#ciudad_empresa').removeAttr('required');                
+               $('#ciudad_empresa').val('');   
+
+             // required independiente
+
+             $('#actividad_independiente').prop('required', 'required');
+             $('#direccion_independiente').prop('required', 'required');
+             $('#ciudad_independiente').prop('required', 'required');
          }
      });   
     }

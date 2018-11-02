@@ -96,19 +96,19 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="md-form">
-						<input type="text" class="form-control" id="nombres_conyuge" name="nombres_conyuge">
+						<input type="text" class="form-control" id="nombres_conyuge" name="nombres_conyuge" required="">
 						<label for="nombres_conyuge">Nombres<span>*</span></label>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="md-form">
-						<input type="text" class="form-control" id="apellido_conyuge" name="apellido_conyuge">
+						<input type="text" class="form-control" id="apellido_conyuge" name="apellido_conyuge" required="">
 						<label for="apellido_conyuge">Apellidos<span>*</span></label>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="md-form">
-						<input type="number" class="form-control" id="documento_conyuge" name="documento_conyuge">
+						<input type="number" class="form-control" id="documento_conyuge" name="documento_conyuge" required="">
 						<label for="documento_conyuge">Documento de Identidad<span>*</span></label>
 					</div>
 				</div>
@@ -116,18 +116,18 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="md-form">
-						<input type="text" class="form-control" id="lugar_conyuge" name="lugar_conyuge">
+						<input type="text" class="form-control" id="lugar_conyuge" name="lugar_conyuge" required="">
 						<label for="lugar_conyuge">Lugar de Nacimiento<span>*</span></label>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="md-form">
-						<input class="datepicker form-control" type="text" name="nacimiento_conyuge" placeholder="Fecha de Nacimiento *">
+						<input class="datepicker form-control" type="text" id="nacimiento_conyuge" name="nacimiento_conyuge" placeholder="Fecha de Nacimiento *" required="">
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="md-form">
-						<input type="number" class="form-control" id="telefono_conyuge" name="telefono_conyuge">
+						<input type="number" class="form-control" id="telefono_conyuge" name="telefono_conyuge" required="">
 						<label for="telefono_conyuge">Teléfono</label>
 					</div>
 				</div>
@@ -229,7 +229,7 @@
 		<div class="row empresaGroup fieldsSpecific2" id="Asalariado">
 			<div class="col-md-4">
 				<div class="md-form">
-					<input type="text" class="form-control" id="empresa" name="empresa">
+					<input type="text" required="" class="form-control" id="empresa" name="empresa">
 					<label for="empresa">Empresa donde trabaja<span>*</span></label>
 				</div>
 			</div>
