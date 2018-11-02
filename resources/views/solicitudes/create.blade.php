@@ -159,7 +159,7 @@
 			<div class="col-md-4">
 				<div class="md-form">
 					<select class="form-control" id="ciudad" name="ciudad" required="">
-						<option value="" disabled selected>Cuidad*</option>
+						<option value="" disabled selected>Ciudad*</option>
 					</select>
 				</div>
 			</div>
@@ -253,7 +253,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="md-form">
-					<input type="tel" class="form-control" id="ciudad_empresa" name="ciudad_empresa">
+					<input type="search" class="form-control" id="ciudad_empresa" name="ciudad_empresa">
 					<label for="ciudad_empresa">Ciudad<span>*</span></label>
 				</div>
 			</div>
