@@ -74,7 +74,7 @@ class SolicitudController extends Controller
 
             Mail::send('correos.solicitud', $request->all(), function($mensaje){
 
-            $mensaje->subject('Correo de contacto - Crediapp');
+            $mensaje->subject('Correo de solicitud - Crediapp');
             $mensaje->to('solicitudes@crediapp.co');
 
             });

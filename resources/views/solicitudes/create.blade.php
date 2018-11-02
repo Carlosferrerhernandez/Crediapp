@@ -149,16 +149,18 @@
 			</div>
 			<div class="col-md-4">
 				<div class="md-form">
-					<input type="text" class="form-control" id="ciudad" name="ciudad" required="">
-					<label for="ciudad">Ciudad<span>*</span></label>
+					<select class="form-control" id="departamento" name="departamento" required="">
+						<option value="" disabled selected>Departamento*</option>
+					</select>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-4">
 				<div class="md-form">
-					<input type="text" class="form-control" id="departamento" name="departamento" required="">
-					<label for="departamento">Departamento<span>*</span></label>
+					<select class="form-control" id="ciudad" name="ciudad" required="">
+						<option value="" disabled selected>Cuidad*</option>
+					</select>
 				</div>
 			</div>
 			<div class="col-md-8 align-self-end">
@@ -416,6 +418,7 @@
 </div>
 
 <script src="{{ asset('js/values.js') }}"></script>
+<script src="{{ asset('js/countries.js')}}"></script>
 
 <script type="text/javascript">
 	$(document).ready(function () {
@@ -432,6 +435,12 @@
 			$("#tel_mail").val(value);
 		});
 	});
+</script>
+
+<script language="javascript">
+	populateCountries("departamento", "ciudad"); // Departamento ubicacion solicitante
+
+	populateStates("ciudad"); // Cuidad
 </script>
 
 @endsection
