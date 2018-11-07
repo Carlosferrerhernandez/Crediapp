@@ -312,7 +312,7 @@
 		<div class="row infoBanco">
 			<div class="col-md-4">
 				<div class="md-form">
-					<select class="form-control" id="nombre_banco" name="nombre_banco[]">
+					<select class="form-control" id="nombre_banco" name="nombre_banco[]" required="">
 						<option selected="" disabled="true">Seleccionar Banco</option>
 						<option value="BANCO DE BOGOTA">BANCO DE BOGOTA</option>
 						<option value="BANCO POPULAR">BANCO POPULAR</option>
@@ -349,7 +349,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="md-form">
-					<select class="form-control" id="t_cuenta" name="t_cuenta[]">
+					<select class="form-control" id="t_cuenta" name="t_cuenta[]" required="">
 						<option selected="" disabled="true">Tipo de cuenta</option>
 						<option value="Ahorros">Ahorros</option>
 						<option value="Corriente">Corriente</option>
@@ -359,7 +359,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="md-form">
-					<input type="number" class="form-control" id="n_cuenta" name="n_cuenta[]">
+					<input type="number" class="form-control" required="" id="n_cuenta" name="n_cuenta[]">
 					<label for="n_cuenta">Número de cuenta<span>*</span></label>
 				</div>
 			</div>
@@ -370,7 +370,7 @@
 			</div>
 			<div class="col-md-12">
 				<div class="custom-control custom-checkbox">
-					<input type="checkbox" class="custom-control-input" id="terminosCondiciones">
+					<input type="checkbox" class="custom-control-input" id="terminosCondiciones" required="">
 					<label class="custom-control-label" for="terminosCondiciones">Acepto los <button type="button" class="modalTyc" data-toggle="modal" data-target="#tycModal">términos y condiciones</button></label>
 				</div>
 			</div>
